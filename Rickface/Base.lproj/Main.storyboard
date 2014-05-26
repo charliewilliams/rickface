@@ -54,30 +54,30 @@ Try it now! Think of something, give a shake... and see how Rick feels about it.
                                 <rect key="frame" x="20" y="395" width="280" height="65"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="ggd-1p-ery">
-                                        <rect key="frame" x="20" y="18" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ggd-1p-ery">
+                                        <rect key="frame" x="11" y="17" width="64" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="fb">
+                                        <state key="normal" image="fb_share">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="facebookPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="MqO-DV-7Lm"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Obj-33-jqC">
-                                        <rect key="frame" x="117" y="18" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Obj-33-jqC">
+                                        <rect key="frame" x="65" y="-42" width="150" height="150"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="tw">
+                                        <state key="normal" image="twitter_tweet">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="twitterPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qBV-CR-p6P"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="266-g1-uPr">
-                                        <rect key="frame" x="214" y="18" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="266-g1-uPr">
+                                        <rect key="frame" x="207" y="10" width="60" height="45"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                                        <state key="normal" title="em">
+                                        <state key="normal" image="email">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -85,7 +85,7 @@ Try it now! Think of something, give a shake... and see how Rick feels about it.
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -95,6 +95,7 @@ Try it now! Think of something, give a shake... and see how Rick feels about it.
                         <outlet property="moodLine1Label" destination="oxG-oK-o5k" id="jbe-xh-3RT"/>
                         <outlet property="rickFaceAboutLabel" destination="xjJ-Yb-57J" id="CDa-Wy-iTY"/>
                         <outlet property="rickFaceTitleLabel" destination="Tc2-FL-VEm" id="Veh-S5-T3z"/>
+                        <outlet property="rickFeelsLabel" destination="JPg-Fm-uaJ" id="OjI-ZL-piY"/>
                         <outlet property="sharingContainerView" destination="TVA-X2-LNX" id="wdK-OS-wva"/>
                     </connections>
                 </viewController>
@@ -103,6 +104,11 @@ Try it now! Think of something, give a shake... and see how Rick feels about it.
             <point key="canvasLocation" x="255" y="92"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="email" width="60" height="45"/>
+        <image name="fb_share" width="64" height="31"/>
+        <image name="twitter_tweet" width="76" height="28"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *rickFaceTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *rickFaceAboutLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *rickFeelsLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *faceImageView;
 @property (weak, nonatomic) IBOutlet UILabel *moodLine1Label;
 @property (weak, nonatomic) IBOutlet UIView *sharingContainerView;
@@ -31,6 +32,7 @@
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
+    self.rickFeelsLabel.alpha = 0.0;
     self.moodLine1Label.text = nil;
     self.moodLine1Label.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
     self.rickFaceAboutLabel.alpha = 1.0;
@@ -81,6 +83,7 @@
     [UIView animateWithDuration:0.6 animations:^{
         
         self.view.backgroundColor = [UIColor blackColor];
+        self.rickFeelsLabel.alpha = 0.0;
         self.rickFaceTitleLabel.alpha = 0.0;
         self.rickFaceAboutLabel.alpha = 0.0;
         self.faceImageView.alpha = 0.0;
@@ -93,6 +96,7 @@
         
         [UIView animateWithDuration:3.0 animations:^{
             
+            self.rickFeelsLabel.alpha = 1.0;
             self.faceImageView.alpha = 1.0;
             self.moodLine1Label.alpha = 1.0;
             self.sharingContainerView.alpha = 1.0;
