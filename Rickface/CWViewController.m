@@ -16,6 +16,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *rickFaceTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *rickFaceAboutLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tryItNowLabel;
 
 @property (weak, nonatomic) IBOutlet UIImageView *faceImageView;
 @property (weak, nonatomic) IBOutlet UILabel *moodLine1Label;
@@ -26,7 +27,20 @@
 @implementation CWViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    
+    self.view.backgroundColor = [UIColor whiteColor];
+    self.moodLine1Label.text = nil;
+    self.moodLine2Label.text = nil;
+    self.moodLine1Label.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
+    self.moodLine2Label.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
+    self.rickFaceAboutLabel.alpha = 1.0;
+    self.tryItNowLabel.alpha = 1.0;
+    self.rickFaceTitleLabel.alpha = 1.0;
+    self.faceImageView.alpha = 0.0;
+    self.moodLine1Label.alpha = 0.0;
+    self.moodLine2Label.alpha = 0.0;
 
     [self downloadFaces];
 }
@@ -46,7 +60,6 @@
 - (void)downloadFaces {
     
     PFQuery *downloadQuery = [PFQuery queryWithClassName:@"Face"];
-//    [downloadQuery includeKey:@"faceImage"];
     [downloadQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
        
         for (PFObject *face in objects) {
@@ -80,11 +93,32 @@
 
 - (void)showNewFace {
     
-    [UIView animateWithDuration:0.6 animations:^{
+    [UIView animateWithDuration:0.3 animations:^{
         
-        self.rickFaceTitleLabel.alpha = 0;
-        self.rickFaceAboutLabel.alpha = 0;
+        self.view.backgroundColor = [UIColor blackColor];
+        self.rickFaceTitleLabel.alpha = 0.0;
+        self.rickFaceAboutLabel.alpha = 0.0;
+        self.tryItNowLabel.alpha = 0.0;
+        self.faceImageView.alpha = 0.0;
+        self.moodLine1Label.alpha = 0.0;
+        self.moodLine2Label.alpha = 0.0;
+        
+    } completion:^(BOOL finished) {
+        
+        [self showNewFaceImpl];
+        
+        [UIView animateWithDuration:0.3 animations:^{
+            
+            self.faceImageView.alpha = 1.0;
+            self.moodLine1Label.alpha = 1.0;
+            self.moodLine2Label.alpha = 1.0;
+        }];
     }];
+    
+
+}
+
+- (void)showNewFaceImpl {
     
     NSError *error = nil;
     NSArray *facePaths = [self.fileManager contentsOfDirectoryAtPath:self.documentsDirectory error:&error];
