@@ -9,6 +9,7 @@
 #import "CWViewController.h"
 #import <Parse/Parse.h>
 #import "NSObject+Helper.h"
+@import Social;
 
 #define kHasShownFirstUX @"kHasShownFirstUX"
 
@@ -39,18 +40,6 @@
     self.sharingContainerView.alpha = 0.0;
 
     [self downloadFaces];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    
-    [super viewDidAppear:animated];
-    
-    if (![self.store boolForKey:kHasShownFirstUX]) {
-        
-        UIViewController *viewController = [self.storyboard instantiateViewControllerWithIdentifier:@"FirstUX"];
-        [self presentViewController:viewController animated:YES completion:nil];
-        [self.store setBool:YES forKey:kHasShownFirstUX];
-    }
 }
 
 - (void)downloadFaces {
@@ -133,4 +122,93 @@
     [self.moodLine1Label sizeToFit];
 }
 
+#pragma mark - Social Share
+
+- (IBAction)facebookPressed:(id)sender {
+    
+    if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+        [self shareFailed];
+        return;
+    }
+    SLComposeViewController *vc = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+    [self handleSocialViewController:vc];
+}
+
+- (IBAction)twitterPressed:(id)sender {
+    
+    if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+        [self shareFailed];
+        return;
+    }
+    SLComposeViewController *vc = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    [self handleSocialViewController:vc];
+}
+
+- (void)handleSocialViewController:(SLComposeViewController *)vc {
+    
+    [self setTextForSocialShare:vc];
+    [self setImageForSocialShare:vc];
+    [self addURLForSocialShare:vc];
+    
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
+- (IBAction)emailPressed:(id)sender {
+    
+    if (![MFMailComposeViewController canSendMail]) {
+        [self shareFailed];
+        return;
+    }
+    
+    MFMailComposeViewController *vc = [[MFMailComposeViewController alloc] initWithNibName:nil bundle:nil];
+    [vc setMailComposeDelegate:self];
+    
+    NSString *body = [NSString stringWithFormat:@"I asked Rick how he felt and he made a face that seemed somehow... <i>%@</i>.\n\n%@", [self.moodLine1Label.text lowercaseString], self.appStoreURLString];
+    [vc setMessageBody:body isHTML:YES];
+    
+    NSData *imageData = UIImageJPEGRepresentation([self imageForSocialShare], 0.6);
+    [vc addAttachmentData:imageData mimeType:@"image/jpeg" fileName:@"Rickface.jpg"];
+    
+    [self presentViewController:vc animated:YES completion:nil];
+}
+
+- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    
+    [controller dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)setTextForSocialShare:(SLComposeViewController *)vc {
+    NSString *text = [NSString stringWithFormat:@"I asked Rick how he felt & he made a face that seemed somehow... %@ #rickface", [self.moodLine1Label.text lowercaseString]];
+    [vc setInitialText:text];
+}
+
+- (void)setImageForSocialShare:(SLComposeViewController *)vc {
+    
+    [vc addImage:self.imageForSocialShare];
+}
+
+- (void)addURLForSocialShare:(SLComposeViewController *)vc {
+    
+    [vc addURL:[NSURL URLWithString:self.appStoreURLString]];
+}
+
+- (UIImage *)imageForSocialShare {
+    
+    UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, YES, 0);
+    [self.view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return image;
+}
+
+- (NSString *)appStoreURLString {
+    return @"http://itunes.apple.com/app/rickface/id882560160";
+}
+
+- (void)shareFailed {
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Not logged in" message:@"Please log in on this device in order to share Rickface." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+}
 @end

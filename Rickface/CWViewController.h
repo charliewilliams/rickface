@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+@import MessageUI;
 
-@interface CWViewController : UIViewController
+@interface CWViewController : UIViewController <MFMailComposeViewControllerDelegate>
 
 @end
