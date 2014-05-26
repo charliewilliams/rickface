@@ -20,7 +20,6 @@
 }
 
 - (BOOL)isRetina {
-    
     return [UIScreen mainScreen].scale == 2.;
 }
 

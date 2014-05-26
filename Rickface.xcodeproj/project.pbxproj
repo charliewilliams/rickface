@@ -21,6 +21,10 @@
 		C05B1C2B1933B25B001DE063 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05B1C0D1933B25B001DE063 /* UIKit.framework */; };
 		C05B1C331933B25B001DE063 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C05B1C311933B25B001DE063 /* InfoPlist.strings */; };
 		C05B1C351933B25B001DE063 /* RickfaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C05B1C341933B25B001DE063 /* RickfaceTests.m */; };
+		C05B1C3F1933B372001DE063 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05B1C3E1933B372001DE063 /* Parse.framework */; };
+		C05B1C421933B458001DE063 /* NSObject+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = C05B1C411933B458001DE063 /* NSObject+Helper.m */; };
+		C05B1C4B1933B515001DE063 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05B1C4A1933B515001DE063 /* SystemConfiguration.framework */; };
+		C05B1C4C1933B522001DE063 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05B1C441933B4DD001DE063 /* MobileCoreServices.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,11 @@
 		C05B1C301933B25B001DE063 /* RickfaceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RickfaceTests-Info.plist"; sourceTree = "<group>"; };
 		C05B1C321933B25B001DE063 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C05B1C341933B25B001DE063 /* RickfaceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RickfaceTests.m; sourceTree = "<group>"; };
+		C05B1C3E1933B372001DE063 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		C05B1C401933B458001DE063 /* NSObject+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Helper.h"; sourceTree = "<group>"; };
+		C05B1C411933B458001DE063 /* NSObject+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Helper.m"; sourceTree = "<group>"; };
+		C05B1C441933B4DD001DE063 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		C05B1C4A1933B515001DE063 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +69,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C05B1C4C1933B522001DE063 /* MobileCoreServices.framework in Frameworks */,
+				C05B1C4B1933B515001DE063 /* SystemConfiguration.framework in Frameworks */,
 				C05B1C0C1933B25B001DE063 /* CoreGraphics.framework in Frameworks */,
 				C05B1C0E1933B25B001DE063 /* UIKit.framework in Frameworks */,
+				C05B1C3F1933B372001DE063 /* Parse.framework in Frameworks */,
 				C05B1C0A1933B25B001DE063 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -101,6 +113,9 @@
 		C05B1C081933B25B001DE063 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C05B1C4A1933B515001DE063 /* SystemConfiguration.framework */,
+				C05B1C441933B4DD001DE063 /* MobileCoreServices.framework */,
+				C05B1C3E1933B372001DE063 /* Parse.framework */,
 				C05B1C091933B25B001DE063 /* Foundation.framework */,
 				C05B1C0B1933B25B001DE063 /* CoreGraphics.framework */,
 				C05B1C0D1933B25B001DE063 /* UIKit.framework */,
@@ -117,6 +132,8 @@
 				C05B1C1B1933B25B001DE063 /* Main.storyboard */,
 				C05B1C1E1933B25B001DE063 /* CWViewController.h */,
 				C05B1C1F1933B25B001DE063 /* CWViewController.m */,
+				C05B1C401933B458001DE063 /* NSObject+Helper.h */,
+				C05B1C411933B458001DE063 /* NSObject+Helper.m */,
 				C05B1C211933B25B001DE063 /* Images.xcassets */,
 				C05B1C101933B25B001DE063 /* Supporting Files */,
 			);
@@ -253,6 +270,7 @@
 				C05B1C1A1933B25B001DE063 /* CWAppDelegate.m in Sources */,
 				C05B1C161933B25B001DE063 /* main.m in Sources */,
 				C05B1C201933B25B001DE063 /* CWViewController.m in Sources */,
+				C05B1C421933B458001DE063 /* NSObject+Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,6 +395,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Rickface/Rickface-Prefix.pch";
 				INFOPLIST_FILE = "Rickface/Rickface-Info.plist";
@@ -390,6 +412,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Rickface/Rickface-Prefix.pch";
 				INFOPLIST_FILE = "Rickface/Rickface-Info.plist";
