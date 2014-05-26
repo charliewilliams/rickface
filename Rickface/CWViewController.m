@@ -82,14 +82,14 @@
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
     
     if (motion == UIEventSubtypeMotionShake) {
-        
+            
         [self showNewFace];
     }
 }
 
 - (void)showNewFace {
     
-    [UIView animateWithDuration:0.3 animations:^{
+    [UIView animateWithDuration:0.6 animations:^{
         
         self.view.backgroundColor = [UIColor blackColor];
         self.rickFaceTitleLabel.alpha = 0.0;
@@ -102,7 +102,7 @@
         
         [self showNewFaceImpl];
         
-        [UIView animateWithDuration:0.3 animations:^{
+        [UIView animateWithDuration:3.0 animations:^{
             
             self.faceImageView.alpha = 1.0;
             self.moodLine1Label.alpha = 1.0;
