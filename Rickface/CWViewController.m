@@ -16,11 +16,10 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *rickFaceTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *rickFaceAboutLabel;
-@property (weak, nonatomic) IBOutlet UILabel *tryItNowLabel;
 
 @property (weak, nonatomic) IBOutlet UIImageView *faceImageView;
 @property (weak, nonatomic) IBOutlet UILabel *moodLine1Label;
-@property (weak, nonatomic) IBOutlet UILabel *moodLine2Label;
+@property (weak, nonatomic) IBOutlet UIView *sharingContainerView;
 
 @end
 
@@ -32,15 +31,12 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.moodLine1Label.text = nil;
-    self.moodLine2Label.text = nil;
     self.moodLine1Label.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
-    self.moodLine2Label.baselineAdjustment = UIBaselineAdjustmentAlignCenters;
     self.rickFaceAboutLabel.alpha = 1.0;
-    self.tryItNowLabel.alpha = 1.0;
     self.rickFaceTitleLabel.alpha = 1.0;
     self.faceImageView.alpha = 0.0;
     self.moodLine1Label.alpha = 0.0;
-    self.moodLine2Label.alpha = 0.0;
+    self.sharingContainerView.alpha = 0.0;
 
     [self downloadFaces];
 }
@@ -98,10 +94,9 @@
         self.view.backgroundColor = [UIColor blackColor];
         self.rickFaceTitleLabel.alpha = 0.0;
         self.rickFaceAboutLabel.alpha = 0.0;
-        self.tryItNowLabel.alpha = 0.0;
         self.faceImageView.alpha = 0.0;
         self.moodLine1Label.alpha = 0.0;
-        self.moodLine2Label.alpha = 0.0;
+        self.sharingContainerView.alpha = 0.0;
         
     } completion:^(BOOL finished) {
         
@@ -111,7 +106,7 @@
             
             self.faceImageView.alpha = 1.0;
             self.moodLine1Label.alpha = 1.0;
-            self.moodLine2Label.alpha = 1.0;
+            self.sharingContainerView.alpha = 1.0;
         }];
     }];
     
@@ -134,6 +129,8 @@
     self.moodLine1Label.text = mood;
     UIImage *image = [UIImage imageWithContentsOfFile:path];
     self.faceImageView.image = image;
+    
+    [self.moodLine1Label sizeToFit];
 }
 
 @end
