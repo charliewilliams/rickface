@@ -35,7 +35,7 @@
     self.launchAnimationImageView.image = [self animationImages][0];
     self.launchAnimationImageView.animationImages = [self animationImages];
     
-    CGFloat duration = 1.5;
+    CGFloat duration = 3.;
     self.launchAnimationImageView.animationDuration = duration;
     
     [self.launchAnimationImageView startAnimating];
@@ -240,12 +240,31 @@
 
 - (NSArray *)animationImages {
     
-    NSArray *imageNames = @[@"001.jpg", @"011.jpg", @"025.jpg", @"035.jpg", @"041.jpg", @"042.jpg", @"049.jpg", @"051.jpg", @"058.jpg", @"065.jpg", @"068.jpg", @"074.jpg", @"081.jpg", @"082.jpg", @"097.jpg"];
+    NSArray *imageNames = @[@"001.jpg", @"001.jpg", @"001.jpg", @"001.jpg",
+                            @"011.jpg", @"011.jpg", @"011.jpg", @"011.jpg",
+                            @"025.jpg", @"025.jpg", @"025.jpg",
+                            @"035.jpg", @"035.jpg", @"035.jpg",
+                            @"041.jpg", @"041.jpg", @"041.jpg",
+//                            @"042.jpg", @"042.jpg",
+//                            @"049.jpg", @"049.jpg",
+//                            @"051.jpg", @"051.jpg",
+//                            @"058.jpg", @"058.jpg",
+                            @"065.jpg",
+                            @"068.jpg",
+                            @"074.jpg",
+                            @"081.jpg",
+                            @"082.jpg",
+                            @"097.jpg",
+//                            @"001.jpg", @"011.jpg", @"025.jpg", @"035.jpg", @"041.jpg", @"042.jpg", @"049.jpg", @"051.jpg", @"058.jpg", @"065.jpg",
+                            @"068.jpg", @"074.jpg", @"081.jpg", @"082.jpg", @"097.jpg"];
     
     NSMutableArray *images = [NSMutableArray array];
     for (NSString *name in imageNames) {
         
-        [images addObject:[UIImage imageNamed:name]];
+        NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:nil];
+        NSData *data = [NSData dataWithContentsOfFile:path];
+        UIImage *image = [UIImage imageWithData:data scale:2.0];
+        [images addObject:image];
     }
     return images;
 }
