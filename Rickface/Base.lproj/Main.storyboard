@@ -12,11 +12,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rick feels:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JPg-Fm-uaJ">
-                                <rect key="frame" x="20" y="19" width="280" height="21"/>
+                            <view contentMode="scaleToFill" id="SyR-cc-8sc">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rick feels:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JPg-Fm-uaJ">
+                                <rect key="frame" x="20" y="25" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="M3L-oK-C8a">
@@ -45,7 +50,7 @@ Try it now: Think of something, give a shake... and see how Rick feels about it.
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Quietly Optimistic" textAlignment="center" lineBreakMode="clip" minimumFontSize="18" adjustsLetterSpacingToFitWidth="YES" id="oxG-oK-o5k">
                                 <rect key="frame" x="20" y="337" width="280" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="50"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -98,6 +103,7 @@ Try it now: Think of something, give a shake... and see how Rick feels about it.
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="backgroundTopWhiteView" destination="SyR-cc-8sc" id="Him-rL-Qy2"/>
                         <outlet property="faceImageView" destination="M3L-oK-C8a" id="nqn-K5-wmy"/>
                         <outlet property="introRickPortraitImageView" destination="rMw-cM-I11" id="rSQ-Xs-b2Y"/>
                         <outlet property="launchAnimationImageView" destination="acI-Fi-7fj" id="OTO-sz-1zG"/>

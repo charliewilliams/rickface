@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *introRickPortraitImageView;
 @property (weak, nonatomic) IBOutlet UILabel *rickFaceTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *rickFaceAboutLabel;
+@property (weak, nonatomic) IBOutlet UIView *backgroundTopWhiteView;
 
 @property (weak, nonatomic) IBOutlet UILabel *rickFeelsLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *faceImageView;
@@ -38,6 +39,7 @@
     self.introRickPortraitImageView.layer.borderColor = [UIColor blackColor].CGColor;
     self.introRickPortraitImageView.layer.borderWidth = 1 / [UIScreen mainScreen].scale;
     self.view.backgroundColor = [UIColor lightGrayColor];
+    self.backgroundTopWhiteView.alpha = 0.0;
     
     if (![self.store boolForKey:kHasShownFirstUX]) {
         
@@ -122,6 +124,8 @@
         self.faceImageView.alpha = 0.0;
         self.moodLine1Label.alpha = 0.0;
         self.sharingContainerView.alpha = 0.0;
+        self.backgroundTopWhiteView.alpha = 0.0;
+        self.introRickPortraitImageView.alpha = 0.0;
         
     } completion:^(BOOL finished) {
         
@@ -129,6 +133,7 @@
         
         [UIView animateWithDuration:3.0 animations:^{
             
+            self.backgroundTopWhiteView.alpha = 1.0;
             self.rickFeelsLabel.alpha = 1.0;
             self.faceImageView.alpha = 1.0;
             self.moodLine1Label.alpha = 1.0;
@@ -149,14 +154,32 @@
     NSUInteger numberOfFaces = [facePaths count];
     
     NSUInteger faceNumber = arc4random() % numberOfFaces;
+//    NSUInteger facesToAnimate = 10;
+//    
+//    NSMutableArray *images = [NSMutableArray array];
+//    NSMutableArray *moods = [NSMutableArray array];
     
-    NSString *mood = facePaths[faceNumber];
-    NSString *path = [self.documentsDirectory stringByAppendingPathComponent:mood];
-    self.moodLine1Label.text = mood;
-    UIImage *image = [UIImage imageWithContentsOfFile:path];
-    self.faceImageView.image = image;
+    NSString *mood;
+    UIImage *image;
     
-    [self.moodLine1Label sizeToFit];
+//    for (NSInteger i=0; i<facesToAnimate; i++) {
+    
+        mood = facePaths[faceNumber % numberOfFaces];
+        NSString *path = [self.documentsDirectory stringByAppendingPathComponent:mood];
+        image = [UIImage imageWithContentsOfFile:path];
+        
+//        [moods addObject:mood];
+//        [images addObject:image];
+//    }
+//    
+//    self.faceImageView.animationImages = images;
+//    self.faceImageView.animationDuration = 0.4;
+//    [self.faceImageView startAnimating];
+//    
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.faceImageView.image = image;
+        self.moodLine1Label.text = mood;
+//    });
 }
 
 #pragma mark - Social Share
