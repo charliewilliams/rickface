@@ -43,7 +43,7 @@ Try it now: Think of something, give a shake... and see how Rick feels about it.
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Quietly Optimistic" textAlignment="center" lineBreakMode="clip" minimumFontSize="25" adjustsLetterSpacingToFitWidth="YES" id="oxG-oK-o5k">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Quietly Optimistic" textAlignment="center" lineBreakMode="clip" minimumFontSize="18" adjustsLetterSpacingToFitWidth="YES" id="oxG-oK-o5k">
                                 <rect key="frame" x="20" y="337" width="280" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="50"/>
@@ -87,6 +87,9 @@ Try it now: Think of something, give a shake... and see how Rick feels about it.
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="001.jpg" id="rMw-cM-I11">
+                                <rect key="frame" x="70" y="129" width="180" height="180"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="acI-Fi-7fj" userLabel="Launch Image View">
                                 <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -96,6 +99,7 @@ Try it now: Think of something, give a shake... and see how Rick feels about it.
                     </view>
                     <connections>
                         <outlet property="faceImageView" destination="M3L-oK-C8a" id="nqn-K5-wmy"/>
+                        <outlet property="introRickPortraitImageView" destination="rMw-cM-I11" id="rSQ-Xs-b2Y"/>
                         <outlet property="launchAnimationImageView" destination="acI-Fi-7fj" id="OTO-sz-1zG"/>
                         <outlet property="moodLine1Label" destination="oxG-oK-o5k" id="jbe-xh-3RT"/>
                         <outlet property="rickFaceAboutLabel" destination="xjJ-Yb-57J" id="CDa-Wy-iTY"/>
@@ -110,6 +114,7 @@ Try it now: Think of something, give a shake... and see how Rick feels about it.
         </scene>
     </scenes>
     <resources>
+        <image name="001.jpg" width="640" height="853"/>
         <image name="email" width="60" height="45"/>
         <image name="fb_share" width="64" height="31"/>
         <image name="twitter_tweet" width="76" height="28"/>

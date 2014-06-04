@@ -16,6 +16,7 @@
 @interface CWViewController ()
 
 @property (weak, nonatomic) IBOutlet UIImageView *launchAnimationImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *introRickPortraitImageView;
 @property (weak, nonatomic) IBOutlet UILabel *rickFaceTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *rickFaceAboutLabel;
 
@@ -32,26 +33,36 @@
     
     [super viewDidLoad];
     
-    self.launchAnimationImageView.image = [self animationImages][0];
-    self.launchAnimationImageView.animationImages = [self animationImages];
+    self.introRickPortraitImageView.layer.cornerRadius = self.introRickPortraitImageView.bounds.size.width/2;
+    self.introRickPortraitImageView.layer.masksToBounds = YES;
+    self.introRickPortraitImageView.layer.borderColor = [UIColor blackColor].CGColor;
+    self.introRickPortraitImageView.layer.borderWidth = 1 / [UIScreen mainScreen].scale;
+    self.view.backgroundColor = [UIColor lightGrayColor];
     
-    CGFloat duration = 3.;
-    self.launchAnimationImageView.animationDuration = duration;
-    
-    [self.launchAnimationImageView startAnimating];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+    if (![self.store boolForKey:kHasShownFirstUX]) {
         
-        [self.launchAnimationImageView stopAnimating];
+        self.launchAnimationImageView.image = [self animationImages][0];
+        self.launchAnimationImageView.animationImages = [self animationImages];
+        CGFloat duration = 3.;
+        self.launchAnimationImageView.animationDuration = duration;
         
-        [UIView animateWithDuration:0.6 delay:0.1 options:0 animations:^{
+        [self.launchAnimationImageView startAnimating];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             
-            self.launchAnimationImageView.alpha = 0.0f;
+            [self.launchAnimationImageView stopAnimating];
             
-        } completion:^(BOOL finished) {
-            
-        }];
-    });
+            [UIView animateWithDuration:0.6 delay:0.1 options:0 animations:^{
+                
+                self.launchAnimationImageView.alpha = 0.0f;
+                
+            } completion:^(BOOL finished) {
+                
+            }];
+        });
+        
+        [self.store setBool:YES forKey:kHasShownFirstUX];
+    }
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.rickFeelsLabel.alpha = 0.0;
