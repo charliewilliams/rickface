@@ -32,7 +32,7 @@ Ask Rick. Rick always knows what to feel. Just ask him and shake your phone.
 
 Rick is a constant pocket companion, no matter what life brings.
 
-Try it now! Think of something, give a shake... and see how Rick feels about it.</string>
+Try it now: Think of something, give a shake... and see how Rick feels about it.</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -87,11 +87,16 @@ Try it now! Think of something, give a shake... and see how Rick feels about it.
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="acI-Fi-7fj" userLabel="Launch Image View">
+                                <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="faceImageView" destination="M3L-oK-C8a" id="nqn-K5-wmy"/>
+                        <outlet property="launchAnimationImageView" destination="acI-Fi-7fj" id="OTO-sz-1zG"/>
                         <outlet property="moodLine1Label" destination="oxG-oK-o5k" id="jbe-xh-3RT"/>
                         <outlet property="rickFaceAboutLabel" destination="xjJ-Yb-57J" id="CDa-Wy-iTY"/>
                         <outlet property="rickFaceTitleLabel" destination="Tc2-FL-VEm" id="Veh-S5-T3z"/>

@@ -15,6 +15,7 @@
 
 @interface CWViewController ()
 
+@property (weak, nonatomic) IBOutlet UIImageView *launchAnimationImageView;
 @property (weak, nonatomic) IBOutlet UILabel *rickFaceTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *rickFaceAboutLabel;
 
@@ -30,6 +31,27 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
+    self.launchAnimationImageView.image = [self animationImages][0];
+    self.launchAnimationImageView.animationImages = [self animationImages];
+    
+    CGFloat duration = 1.5;
+    self.launchAnimationImageView.animationDuration = duration;
+    
+    [self.launchAnimationImageView startAnimating];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        
+        [self.launchAnimationImageView stopAnimating];
+        
+        [UIView animateWithDuration:0.6 delay:0.1 options:0 animations:^{
+            
+            self.launchAnimationImageView.alpha = 0.0f;
+            
+        } completion:^(BOOL finished) {
+            
+        }];
+    });
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.rickFeelsLabel.alpha = 0.0;
@@ -51,21 +73,21 @@
        
         for (PFObject *face in objects) {
             
-            NSString *moodString = face[@"moodString"];
+            NSString *moodString = face[@"emotion"];
             NSString *path = [self.documentsDirectory stringByAppendingPathComponent:moodString];
             if ([self.fileManager fileExistsAtPath:path]) {
                 continue;
             }
             
-            PFFile *file = face[@"faceImage"];
-            
-            NSError *error = nil;
-            NSData *data = [file getData:&error];
-            if (error) {
-                DLog(@"%@", error);
-            }
-            
-            [data writeToFile:path atomically:NO];
+            PFFile *file = face[@"image_640_853"];
+            [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                
+                if (error) {
+                    DLog(@"%@", error);
+                }
+                
+                [data writeToFile:path atomically:NO];
+            }];
         }
     }];
 }
@@ -215,4 +237,17 @@
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Not logged in" message:@"Please log in on this device in order to share Rickface." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
 }
+
+- (NSArray *)animationImages {
+    
+    NSArray *imageNames = @[@"001.jpg", @"011.jpg", @"025.jpg", @"035.jpg", @"041.jpg", @"042.jpg", @"049.jpg", @"051.jpg", @"058.jpg", @"065.jpg", @"068.jpg", @"074.jpg", @"081.jpg", @"082.jpg", @"097.jpg"];
+    
+    NSMutableArray *images = [NSMutableArray array];
+    for (NSString *name in imageNames) {
+        
+        [images addObject:[UIImage imageNamed:name]];
+    }
+    return images;
+}
+
 @end
