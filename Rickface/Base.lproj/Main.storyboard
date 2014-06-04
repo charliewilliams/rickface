@@ -56,37 +56,31 @@ Try it now: Think of something, give a shake... and see how Rick feels about it.
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" id="TVA-X2-LNX" userLabel="Sharing container view">
-                                <rect key="frame" x="20" y="395" width="280" height="65"/>
+                                <rect key="frame" x="20" y="416" width="280" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ggd-1p-ery">
-                                        <rect key="frame" x="11" y="17" width="64" height="31"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ggd-1p-ery" userLabel="fb-share">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="fb_share">
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <inset key="contentEdgeInsets" minX="32" minY="0.0" maxX="-10" maxY="0.0"/>
+                                        <state key="normal" title="Share Rickface" backgroundImage="fb_share">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="facebookPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="MqO-DV-7Lm"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Obj-33-jqC">
-                                        <rect key="frame" x="65" y="-42" width="150" height="150"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" image="twitter_tweet">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Obj-33-jqC" userLabel="tw-share">
+                                        <rect key="frame" x="140" y="0.0" width="130" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                        <inset key="contentEdgeInsets" minX="32" minY="0.0" maxX="-10" maxY="0.0"/>
+                                        <state key="normal" title="Tweet Rickface" backgroundImage="tw_share">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <action selector="twitterPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="qBV-CR-p6P"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="266-g1-uPr">
-                                        <rect key="frame" x="207" y="10" width="60" height="45"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
-                                        <state key="normal" image="email">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="emailPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="bHd-El-O9D"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -121,9 +115,8 @@ Try it now: Think of something, give a shake... and see how Rick feels about it.
     </scenes>
     <resources>
         <image name="001.jpg" width="640" height="853"/>
-        <image name="email" width="60" height="45"/>
-        <image name="fb_share" width="64" height="31"/>
-        <image name="twitter_tweet" width="76" height="28"/>
+        <image name="fb_share" width="44" height="44"/>
+        <image name="tw_share" width="44" height="44"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
