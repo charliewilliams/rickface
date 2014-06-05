@@ -19,7 +19,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *introRickPortraitImageView;
 @property (weak, nonatomic) IBOutlet UILabel *rickFaceTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *rickFaceAboutLabel;
-@property (weak, nonatomic) IBOutlet UIView *backgroundTopWhiteView;
+@property (weak, nonatomic) IBOutlet UIView *bottomBlackView;
 
 @property (weak, nonatomic) IBOutlet UILabel *rickFeelsLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *faceImageView;
@@ -39,7 +39,7 @@
     self.introRickPortraitImageView.layer.borderColor = [UIColor blackColor].CGColor;
     self.introRickPortraitImageView.layer.borderWidth = 1 / [UIScreen mainScreen].scale;
     self.view.backgroundColor = [UIColor lightGrayColor];
-    self.backgroundTopWhiteView.alpha = 0.0;
+    self.bottomBlackView.alpha = 0.0;
     
     if (![self.store boolForKey:kHasShownFirstUX]) {
         
@@ -81,18 +81,25 @@
 
 - (void)downloadFaces {
     
+    NSError *error = nil;
+    NSMutableArray *facePaths = [[self.fileManager contentsOfDirectoryAtPath:self.documentsDirectory error:&error] mutableCopy];
+    if (error) {
+        DLog(@"%@", error);
+    }
+    
     PFQuery *downloadQuery = [PFQuery queryWithClassName:@"Face"];
     [downloadQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
        
         for (PFObject *face in objects) {
             
             NSString *moodString = face[@"emotion"];
+            [facePaths removeObject:moodString];
             NSString *path = [self.documentsDirectory stringByAppendingPathComponent:moodString];
             if ([self.fileManager fileExistsAtPath:path]) {
                 continue;
             }
             
-            PFFile *file = face[@"image_640_853"];
+            PFFile *file = face[@"image_640_1137"];
             [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
                 
                 if (error) {
@@ -101,6 +108,16 @@
                 
                 [data writeToFile:path atomically:NO];
             }];
+        }
+        
+        for (NSString *face in facePaths) {
+
+            error = nil;
+            NSString *path = [self.documentsDirectory stringByAppendingPathComponent:face];
+            [[NSFileManager defaultManager] removeItemAtPath:path error:&error];
+            if (error) {
+                DLog(@"%@", error);
+            }
         }
     }];
 }
@@ -124,7 +141,7 @@
         self.faceImageView.alpha = 0.0;
         self.moodLine1Label.alpha = 0.0;
         self.sharingContainerView.alpha = 0.0;
-        self.backgroundTopWhiteView.alpha = 0.0;
+        self.bottomBlackView.alpha = 0.0;
         self.introRickPortraitImageView.alpha = 0.0;
         
     } completion:^(BOOL finished) {
@@ -133,7 +150,7 @@
         
         [UIView animateWithDuration:3.0 animations:^{
             
-            self.backgroundTopWhiteView.alpha = 1.0;
+            self.bottomBlackView.alpha = 1.0;
             self.rickFeelsLabel.alpha = 1.0;
             self.faceImageView.alpha = 1.0;
             self.moodLine1Label.alpha = 1.0;
@@ -164,10 +181,11 @@
     
 //    for (NSInteger i=0; i<facesToAnimate; i++) {
     
-        mood = facePaths[faceNumber % numberOfFaces];
-        NSString *path = [self.documentsDirectory stringByAppendingPathComponent:mood];
-        image = [UIImage imageWithContentsOfFile:path];
-        
+    mood = facePaths[faceNumber % numberOfFaces];
+    NSString *path = [self.documentsDirectory stringByAppendingPathComponent:mood];
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    image = [UIImage imageWithData:data scale:2.0];
+    
 //        [moods addObject:mood];
 //        [images addObject:image];
 //    }
