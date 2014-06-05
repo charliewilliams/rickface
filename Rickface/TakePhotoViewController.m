@@ -32,7 +32,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 - (void)checkDeviceAuthorisationStatus;
 
 // Session management.
-@property (nonatomic) dispatch_queue_t sessionQueue; // Communicate with the session and other session objects on this queue.
+@property (nonatomic) dispatch_queue_t sessionQueue;
 @property (nonatomic) AVCaptureSession *captureSession;
 @property (nonatomic) AVCaptureDeviceInput *videoDeviceInput;
 @property (nonatomic) AVCaptureVideoDataOutput *videoOutput;

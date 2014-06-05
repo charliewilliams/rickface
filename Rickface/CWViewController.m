@@ -79,6 +79,14 @@
     [self downloadFaces];
 }
 
+#warning Debug only!
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    
+    [self showNewFace];
+}
+
 - (void)downloadFaces {
     
     NSError *error = nil;

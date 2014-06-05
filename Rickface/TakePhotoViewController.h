@@ -10,4 +10,7 @@
 
 @interface TakePhotoViewController : UIViewController
 
+@property (nonatomic, weak) IBOutlet UIImageView *rickFaceImage;
+@property (nonatomic, weak) IBOutlet UILabel *rickMoodLabel;
+
 @end
