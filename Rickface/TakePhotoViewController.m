@@ -6,14 +6,11 @@
 //  Copyright (c) 2014 Kudan. All rights reserved.
 //
 
-typedef void(^CompletionBlock)();
-
 static void * CapturingStillImageContext = &CapturingStillImageContext;
 static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDeviceAuthorizedContext;
 
 #import "TakePhotoViewController.h"
-#import <FacebookSDK/FacebookSDK.h>
-#import <Parse/Parse.h>
+#import "TakePhotoViewController+SocialShare.h"
 @import AssetsLibrary;
 @import AVFoundation;
 
@@ -23,11 +20,11 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 @property (weak, nonatomic) IBOutlet UIView *cameraView;
 @property (weak, nonatomic) IBOutlet UIButton *takePhotoButton;
 @property (weak, nonatomic) IBOutlet UIButton *switchCameraButton;
-
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
 - (IBAction)takePicture:(UIButton *)sender;
 - (IBAction)switchCamera:(UIButton *)sender;
-
+- (IBAction)cancelPressed:(id)sender;
 
 - (void)checkDeviceAuthorisationStatus;
 
@@ -185,12 +182,32 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 	
 //	[[[ALAssetsLibrary alloc] init] writeImageToSavedPhotosAlbum:[image CGImage] orientation:ALAssetOrientationUp completionBlock:nil];
     
-    UIImage *image = [UIImage imageWithCGImage:imageRef];
+    UIImage *userImage = [UIImage imageWithCGImage:imageRef];
+    // amalgamate the two images
+    UIImage *imageToShare = [self imageFromRick:self.rickFaceImageView.image andUser:userImage];
+    // and share (in category)
+    [self showShareScreenWithImage:imageToShare];
+}
+
+- (UIImage *)imageFromRick:(UIImage *)rickface andUser:(UIImage *)userface {
     
-    [self checkPermissionsWithCompletion:^{
-       
-        [self presentFBShareWithPhoto:image];
-    }];
+    CGSize rickSize = rickface.size;
+//    CGSize userSize = userface.size;
+//    CGFloat scale = userSize.height/rickSize.height;
+    
+    CGSize fullSize = CGSizeMake(rickSize.width*2, rickSize.height);
+    
+    UIGraphicsBeginImageContextWithOptions(fullSize, YES, 0);
+    
+    [rickface drawInRect:CGRectMake(0, 0, rickSize.width, rickSize.height)];
+    
+    CGRect offsetRect = CGRectMake(rickface.size.width, 0, rickface.size.width, rickface.size.height);
+    [userface drawInRect:offsetRect];
+    
+    UIImage *combImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return combImage;
 }
 
 - (IBAction)switchCamera:(UIButton *)sender {
@@ -232,151 +249,9 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 	});
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-	[textField resignFirstResponder];
-	return NO;
-}
-
 - (IBAction)cancelPressed:(id)sender {
     
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)postWithoutPhoto:(id)sender {
-    
-    [self checkPermissionsWithCompletion:^{
-        
-        [self postOpenGraphStoryWithPhoto:nil remoteURI:nil];
-    }];
-}
-
-- (void)checkPermissionsWithCompletion:(CompletionBlock)completion {
-    
-    [FBRequestConnection startWithGraphPath:@"/me/permissions" completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-        
-        if (!error) {
-            
-            NSDictionary *permissions= [(NSArray *)[result data] objectAtIndex:0];
-            if (![permissions objectForKey:@"publish_actions"]){
-
-                [self requestPublishPermissionsWithCompletion:completion];
-                
-            } else {
-                completion();
-            }
-            
-        } else {
-            [self handleError:error];
-        }
-    }];
-}
-
-- (void)requestPublishPermissionsWithCompletion:(CompletionBlock)completion {
-    
-    [FBSession.activeSession requestNewPublishPermissions:[NSArray arrayWithObject:@"publish_actions"] defaultAudience:FBSessionDefaultAudienceFriends completionHandler:^(FBSession *session, NSError *error) {
-        
-        if (!error) {
-            
-            if ([FBSession.activeSession.permissions indexOfObject:@"publish_actions"] == NSNotFound) {
-                // Permission not granted, tell the user we will not publish
-                NSString *alertTitle = @"Permission not granted";
-                NSString *alertText = @"Your action will not be published to Facebook.";
-                [[[UIAlertView alloc] initWithTitle:alertTitle message:alertText delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-            } else {
-                
-                completion();
-            }
-            
-        } else {
-            [self handleError:error];
-        }
-    }];
-}
-
-- (void)presentFBShareWithPhoto:(UIImage *)image {
-    
-    [FBRequestConnection startForUploadStagingResourceWithImage:image completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-        
-        if(!error) {
-            // Log the uri of the staged image
-            NSLog(@"Successfuly staged image with staged URI: %@", [result objectForKey:@"uri"]);
-            [self presentShareDialogWithPhoto:image remoteURI:[result objectForKey:@"uri"]];
-            
-        } else {
-            [self handleError:error];
-        }
-    }];
-}
-
-- (void)presentShareDialogWithPhoto:(UIImage *)image remoteURI:(NSString *)remoteURI {
-    
-    if ([FBDialogs canPresentShareDialogWithPhotos]) {
-        
-        FBPhotoParams *params = [[FBPhotoParams alloc] initWithPhotos:@[image]];
-        
-        [FBDialogs presentShareDialogWithPhotoParams:params clientState:nil handler:^(FBAppCall *call, NSDictionary *results, NSError *error) {
-            if (error) {
-                NSLog(@"Error: %@", error.description);
-            } else {
-                NSLog(@"Success!");
-                [self dismissViewControllerAnimated:YES completion:nil];
-            }
-        }];
-    } else {
-        // The user doesn't have the Facebook for iOS app installed.  You
-        // may be able to use a fallback.
-        NSLog(@"Problem!");
-        [self postOpenGraphStoryWithPhoto:image remoteURI:remoteURI];
-    }
-}
-
-- (void)postOpenGraphStoryWithPhoto:(UIImage *)image remoteURI:(NSString *)remoteURI {
-    
-    NSMutableDictionary<FBGraphObject> *action = [FBGraphObject graphObject];
-    action[@"user"] = [PFUser currentUser];
-    
-    [FBRequestConnection startForPostWithGraphPath:@"me/cuddlrapp:cuddle" graphObject:action completionHandler:^(FBRequestConnection *connection,id result, NSError *error) {
-
-        if (!error) {
-            
-            NSMutableDictionary<FBOpenGraphObject>* object = [self openGraphObjectForRemoteURI:remoteURI];
-            
-            [FBRequestConnection startForPostOpenGraphObject:object completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-                
-                if (!error) {
-                    
-                    // get the object ID for the Open Graph object that is now stored in the Object API
-                    NSString *objectId = [result objectForKey:@"id"];
-                    NSLog(@"object id: %@", objectId);
-                    
-                } else {
-                    [self handleError:error];
-                }
-            }];
-        } else {
-            [self handleError:error];
-        }
-    }];
-}
-
-- (NSMutableDictionary<FBOpenGraphObject> *)openGraphObjectForRemoteURI:(NSString *)remoteURI {
-    
-    NSString *title = [NSString stringWithFormat:@"%@ just cuddled with Cuddlr!", [PFUser currentUser].username];
-#warning Need description
-    NSString *description = @"";
-    NSArray *imageArray = @[@{@"url": remoteURI, @"user_generated" : @"true" }];
-#warning Replace FB page or iTunes URL
-    NSString *url = @"cuddlrAppURL.com";
-    
-    NSMutableDictionary<FBOpenGraphObject> *object = [FBGraphObject openGraphObjectForPostWithType:@"cuddlrapp:cuddle" title:title image:imageArray url:url description:description];
-    return object;
-}
-
-- (void)handleError:(NSError *)error {
-    // See https://developers.facebook.com/docs/ios/errors/
-    if ([FBErrorUtility shouldNotifyUserForError:error]) {
-        [[[UIAlertView alloc] initWithTitle:@"Network error" message:[FBErrorUtility userMessageForError:error] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
-    }
 }
 
 @end

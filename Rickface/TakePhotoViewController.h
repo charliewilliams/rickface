@@ -10,7 +10,8 @@
 
 @interface TakePhotoViewController : UIViewController
 
-@property (nonatomic, weak) IBOutlet UIImageView *rickFaceImage;
-@property (nonatomic, weak) IBOutlet UILabel *rickMoodLabel;
+@property (nonatomic, strong) NSString *activeSLServiceType;
+@property (nonatomic, weak) IBOutlet UIImageView *rickFaceImageView;
+@property (nonatomic, strong) NSString *rickFaceMoodString;
 
 @end

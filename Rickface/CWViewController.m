@@ -9,6 +9,8 @@
 #import "CWViewController.h"
 #import <Parse/Parse.h>
 #import "NSObject+Helper.h"
+#import "TakePhotoViewController.h"
+#import "TakePhotoViewController+SocialShare.h"
 @import Social;
 
 #define kHasShownFirstUX @"kHasShownFirstUX"
@@ -79,12 +81,12 @@
     [self downloadFaces];
 }
 
-#warning Debug only!
 - (void)viewDidAppear:(BOOL)animated {
     
     [super viewDidAppear:animated];
     
-    [self showNewFace];
+//#warning Debug only!
+//    [self showNewFace];
 }
 
 - (void)downloadFaces {
@@ -216,8 +218,7 @@
         [self shareFailed];
         return;
     }
-    SLComposeViewController *vc = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-    [self handleSocialViewController:vc];
+    [self showPhotoScreenForService:SLServiceTypeFacebook];
 }
 
 - (IBAction)twitterPressed:(id)sender {
@@ -226,56 +227,7 @@
         [self shareFailed];
         return;
     }
-    SLComposeViewController *vc = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
-    [self handleSocialViewController:vc];
-}
-
-- (void)handleSocialViewController:(SLComposeViewController *)vc {
-    
-    [self setTextForSocialShare:vc];
-    [self setImageForSocialShare:vc];
-    [self addURLForSocialShare:vc];
-    
-    [self presentViewController:vc animated:YES completion:nil];
-}
-
-- (IBAction)emailPressed:(id)sender {
-    
-    if (![MFMailComposeViewController canSendMail]) {
-        [self shareFailed];
-        return;
-    }
-    
-    MFMailComposeViewController *vc = [[MFMailComposeViewController alloc] initWithNibName:nil bundle:nil];
-    [vc setMailComposeDelegate:self];
-    
-    NSString *body = [NSString stringWithFormat:@"I asked Rick how he felt and he made a face that seemed somehow... <i>%@</i>.\n\n%@", [self.moodLine1Label.text lowercaseString], self.appStoreURLString];
-    [vc setMessageBody:body isHTML:YES];
-    
-    NSData *imageData = UIImageJPEGRepresentation([self imageForSocialShare], 0.6);
-    [vc addAttachmentData:imageData mimeType:@"image/jpeg" fileName:@"Rickface.jpg"];
-    
-    [self presentViewController:vc animated:YES completion:nil];
-}
-
-- (void)mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
-    
-    [controller dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (void)setTextForSocialShare:(SLComposeViewController *)vc {
-    NSString *text = [NSString stringWithFormat:@"I asked Rick how he felt & he made a face that seemed somehow... %@ #rickface", [self.moodLine1Label.text lowercaseString]];
-    [vc setInitialText:text];
-}
-
-- (void)setImageForSocialShare:(SLComposeViewController *)vc {
-    
-    [vc addImage:self.imageForSocialShare];
-}
-
-- (void)addURLForSocialShare:(SLComposeViewController *)vc {
-    
-    [vc addURL:[NSURL URLWithString:self.appStoreURLString]];
+    [self showPhotoScreenForService:SLServiceTypeTwitter];
 }
 
 - (UIImage *)imageForSocialShare {
@@ -288,15 +240,13 @@
     return image;
 }
 
-- (NSString *)appStoreURLString {
-    return @"http://itunes.apple.com/app/rickface/id882560160";
-}
-
 - (void)shareFailed {
     
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Not logged in" message:@"Please log in on this device in order to share Rickface." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
     [alert show];
 }
+
+#pragma mark - Intro
 
 - (NSArray *)animationImages {
     
@@ -327,6 +277,18 @@
         [images addObject:image];
     }
     return images;
+}
+
+#pragma mark - Transition to photo
+
+- (void)showPhotoScreenForService:(NSString *)service {
+    
+    TakePhotoViewController *tpvc = [self.storyboard instantiateViewControllerWithIdentifier:@"TakePhotoViewController"];
+    [tpvc view];
+    tpvc.activeSLServiceType = service;
+    tpvc.rickFaceImageView.image = [self imageForSocialShare];
+    tpvc.rickFaceMoodString = self.moodLine1Label.text;
+    [self presentViewController:tpvc animated:YES completion:nil];
 }
 
 @end

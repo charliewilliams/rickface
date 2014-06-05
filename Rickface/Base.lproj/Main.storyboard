@@ -22,11 +22,13 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rick feels:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JPg-Fm-uaJ">
-                                <rect key="frame" x="20" y="25" width="280" height="21"/>
+                                <rect key="frame" x="0.0" y="25" width="320" height="31"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="0.40000000000000002" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" id="xjJ-Yb-57J">
                                 <rect key="frame" x="20" y="305" width="280" height="155"/>
@@ -116,7 +118,7 @@ Try it now: Think of something, give a shake... and see how Rick feels about it.
         <!--Take Photo View Controller-->
         <scene sceneID="rn6-8T-GN0">
             <objects>
-                <viewController id="Zzi-sK-ekE" customClass="TakePhotoViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TakePhotoViewController" id="Zzi-sK-ekE" customClass="TakePhotoViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E6E-69-VSS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -148,6 +150,9 @@ Try it now: Think of something, give a shake... and see how Rick feels about it.
                                         <state key="normal" title="Cancel">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="cancelPressed:" destination="Zzi-sK-ekE" eventType="touchUpInside" id="BKO-fi-Xmu"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Mw4-DR-K1w" userLabel="Button - Switch">
                                         <rect key="frame" x="238" y="411" width="79" height="31"/>
@@ -159,17 +164,10 @@ Try it now: Think of something, give a shake... and see how Rick feels about it.
                                             <action selector="switchCamera:" destination="Zzi-sK-ekE" eventType="touchUpInside" id="qM1-3z-T3D"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="s2c-UX-CBu" userLabel="Rickface image">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="s2c-UX-CBu" userLabel="Rickface image">
                                         <rect key="frame" x="200" y="58" width="100" height="133"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="D3W-5N-gj5" userLabel="Rick mood label">
-                                        <rect key="frame" x="200" y="170" width="100" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -178,8 +176,8 @@ Try it now: Think of something, give a shake... and see how Rick feels about it.
                     </view>
                     <connections>
                         <outlet property="cameraView" destination="YOF-ff-aId" id="fIq-4i-ASg"/>
-                        <outlet property="rickFaceImage" destination="s2c-UX-CBu" id="i2L-EP-3bc"/>
-                        <outlet property="rickMoodLabel" destination="D3W-5N-gj5" id="IyI-LV-d9b"/>
+                        <outlet property="cancelButton" destination="PBx-Hh-a7k" id="ULV-PM-BEi"/>
+                        <outlet property="rickFaceImageView" destination="s2c-UX-CBu" id="C3S-fd-k48"/>
                         <outlet property="switchCameraButton" destination="Mw4-DR-K1w" id="U9H-Op-Zg4"/>
                         <outlet property="takePhotoButton" destination="2WK-Qw-nwF" id="Gv3-X2-z4i"/>
                     </connections>

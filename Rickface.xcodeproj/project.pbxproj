@@ -27,6 +27,8 @@
 		C05B1C4C1933B522001DE063 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05B1C441933B4DD001DE063 /* MobileCoreServices.framework */; };
 		C0739DF61940D8D30064035B /* TakePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0739DF51940D8D30064035B /* TakePhotoViewController.m */; };
 		C0739DF91940DA250064035B /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0739DF81940DA250064035B /* FacebookSDK.framework */; };
+		C0739DFC1940DDB20064035B /* TakePhotoViewController+SocialShare.m in Sources */ = {isa = PBXBuildFile; fileRef = C0739DFB1940DDB20064035B /* TakePhotoViewController+SocialShare.m */; };
+		C0739DFE1940E3CD0064035B /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0739DFD1940E3CD0064035B /* FontAwesome.otf */; };
 		C0DC6298193FBE16002F228F /* 001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0DC6289193FBE16002F228F /* 001.jpg */; };
 		C0DC6299193FBE16002F228F /* 011.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0DC628A193FBE16002F228F /* 011.jpg */; };
 		C0DC629A193FBE16002F228F /* 025.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C0DC628B193FBE16002F228F /* 025.jpg */; };
@@ -82,6 +84,9 @@
 		C0739DF41940D8D30064035B /* TakePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakePhotoViewController.h; sourceTree = "<group>"; };
 		C0739DF51940D8D30064035B /* TakePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakePhotoViewController.m; sourceTree = "<group>"; };
 		C0739DF81940DA250064035B /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = ../Cuddlr/ParseLib/FacebookSDK.framework; sourceTree = "<group>"; };
+		C0739DFA1940DDB20064035B /* TakePhotoViewController+SocialShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TakePhotoViewController+SocialShare.h"; sourceTree = "<group>"; };
+		C0739DFB1940DDB20064035B /* TakePhotoViewController+SocialShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TakePhotoViewController+SocialShare.m"; sourceTree = "<group>"; };
+		C0739DFD1940E3CD0064035B /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
 		C0DC6289193FBE16002F228F /* 001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 001.jpg; sourceTree = "<group>"; };
 		C0DC628A193FBE16002F228F /* 011.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 011.jpg; sourceTree = "<group>"; };
 		C0DC628B193FBE16002F228F /* 025.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = 025.jpg; sourceTree = "<group>"; };
@@ -173,6 +178,8 @@
 				C05B1C411933B458001DE063 /* NSObject+Helper.m */,
 				C0739DF41940D8D30064035B /* TakePhotoViewController.h */,
 				C0739DF51940D8D30064035B /* TakePhotoViewController.m */,
+				C0739DFA1940DDB20064035B /* TakePhotoViewController+SocialShare.h */,
+				C0739DFB1940DDB20064035B /* TakePhotoViewController+SocialShare.m */,
 				C05B1C211933B25B001DE063 /* Images.xcassets */,
 				C05B1C101933B25B001DE063 /* Supporting Files */,
 			);
@@ -182,6 +189,7 @@
 		C05B1C101933B25B001DE063 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C0739DFD1940E3CD0064035B /* FontAwesome.otf */,
 				C0DC6289193FBE16002F228F /* 001.jpg */,
 				C0DC628A193FBE16002F228F /* 011.jpg */,
 				C0DC628B193FBE16002F228F /* 025.jpg */,
@@ -314,6 +322,7 @@
 				C0DC629A193FBE16002F228F /* 025.jpg in Resources */,
 				C0DC62A6193FBE16002F228F /* 097.jpg in Resources */,
 				C05B1C1D1933B25B001DE063 /* Main.storyboard in Resources */,
+				C0739DFE1940E3CD0064035B /* FontAwesome.otf in Resources */,
 				C0DC62A3193FBE16002F228F /* 074.jpg in Resources */,
 				C0DC629B193FBE16002F228F /* 035.jpg in Resources */,
 				C0DC6298193FBE16002F228F /* 001.jpg in Resources */,
@@ -337,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C0739DF61940D8D30064035B /* TakePhotoViewController.m in Sources */,
+				C0739DFC1940DDB20064035B /* TakePhotoViewController+SocialShare.m in Sources */,
 				C05B1C1A1933B25B001DE063 /* CWAppDelegate.m in Sources */,
 				C05B1C161933B25B001DE063 /* main.m in Sources */,
 				C05B1C201933B25B001DE063 /* CWViewController.m in Sources */,
@@ -406,7 +416,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Charlie Williams (8HTL4QAGGJ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Charlie Williams (8HTL4QAGGJ)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -424,6 +435,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "637C28EC-7C5F-422F-ABB9-8FD5CCF1BE7A";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -444,7 +456,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Charlie Williams (N2WM6EN8GQ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Charlie Williams (N2WM6EN8GQ)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -455,6 +468,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PROVISIONING_PROFILE = "5BDE73AD-8462-4A0A-96DA-31DDEF09A170";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
