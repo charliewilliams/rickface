@@ -11,9 +11,10 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 
 #import "TakePhotoViewController.h"
 #import "TakePhotoViewController+SocialShare.h"
+#import <Parse/Parse.h>
 @import AssetsLibrary;
 @import AVFoundation;
-
+@import Social;
 
 @interface TakePhotoViewController () <AVCaptureVideoDataOutputSampleBufferDelegate, UITextFieldDelegate>
 
@@ -171,13 +172,18 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
         return;
     }
     
+    UIImage *flipped = [UIImage imageWithCGImage:cgImage scale:2.0 orientation:UIImageOrientationDownMirrored];
+    
 	dispatch_async(dispatch_get_main_queue(), ^{
-		self.cameraView.layer.contents = (id)CFBridgingRelease(cgImage);
+		self.cameraView.layer.contents = (id)CFBridgingRelease(flipped.CGImage);
 	});
 }
 
 #pragma mark - UI Stuff
 - (IBAction)takePicture:(UIButton *)sender {
+    
+    [self.captureSession stopRunning];
+    
 	CGImageRef imageRef = (__bridge CGImageRef)(self.cameraView.layer.contents);
 	
 //	[[[ALAssetsLibrary alloc] init] writeImageToSavedPhotosAlbum:[image CGImage] orientation:ALAssetOrientationUp completionBlock:nil];

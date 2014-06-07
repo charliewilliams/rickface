@@ -279,6 +279,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Charlie Williams";
 				TargetAttributes = {
+					C05B1C051933B25B001DE063 = {
+						DevelopmentTeam = N2WM6EN8GQ;
+					};
 					C05B1C261933B25B001DE063 = {
 						TestTargetID = C05B1C051933B25B001DE063;
 					};
@@ -435,7 +438,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "637C28EC-7C5F-422F-ABB9-8FD5CCF1BE7A";
+				PROVISIONING_PROFILE = "5BDE73AD-8462-4A0A-96DA-31DDEF09A170";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -456,8 +459,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Charlie Williams (N2WM6EN8GQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Charlie Williams (N2WM6EN8GQ)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Charlie Williams (8HTL4QAGGJ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Charlie Williams (8HTL4QAGGJ)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -479,6 +482,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -488,6 +493,7 @@
 				GCC_PREFIX_HEADER = "Rickface/Rickface-Prefix.pch";
 				INFOPLIST_FILE = "Rickface/Rickface-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -497,6 +503,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -506,6 +514,7 @@
 				GCC_PREFIX_HEADER = "Rickface/Rickface-Prefix.pch";
 				INFOPLIST_FILE = "Rickface/Rickface-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

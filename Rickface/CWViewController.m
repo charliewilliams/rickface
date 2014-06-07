@@ -142,7 +142,7 @@
 
 - (void)showNewFace {
     
-    [UIView animateWithDuration:0.6 animations:^{
+     [UIView animateWithDuration:0.6 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
         
         self.view.backgroundColor = [UIColor blackColor];
         self.rickFeelsLabel.alpha = 0.0;
@@ -179,6 +179,10 @@
         DLog(@"%@", error);
     }
     NSUInteger numberOfFaces = [facePaths count];
+    
+    if (!numberOfFaces) {
+        return;
+    }
     
     NSUInteger faceNumber = arc4random() % numberOfFaces;
 //    NSUInteger facesToAnimate = 10;
@@ -283,11 +287,25 @@
 
 - (void)showPhotoScreenForService:(NSString *)service {
     
+    NSString *userName = nil;
+    
+    if ([service isEqualToString:SLServiceTypeFacebook]) {
+        userName = [PFTwitterUtils twitter].screenName;
+    } else if ([service isEqualToString:SLServiceTypeTwitter]) {
+        userName = [[PFUser currentUser] username];
+    }
+    
     TakePhotoViewController *tpvc = [self.storyboard instantiateViewControllerWithIdentifier:@"TakePhotoViewController"];
     [tpvc view];
     tpvc.activeSLServiceType = service;
     tpvc.rickFaceImageView.image = [self imageForSocialShare];
-    tpvc.rickFaceMoodString = self.moodLine1Label.text;
+    tpvc.moodLabel.text = self.moodLine1Label.text;
+    
+    if (userName) {
+        tpvc.userFeelsLabel.text = [NSString stringWithFormat:@"%@ feels:", userName];
+    } else {
+        tpvc.userFeelsLabel.hidden = YES;
+    }
     [self presentViewController:tpvc animated:YES completion:nil];
 }
 

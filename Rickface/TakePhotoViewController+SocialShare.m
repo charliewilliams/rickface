@@ -29,17 +29,21 @@ typedef void(^CompletionBlock)();
 
 - (void)handleSocialViewController:(SLComposeViewController *)vc image:(UIImage *)image {
     
-    [self setTextForSocialShare:vc];
-    [vc addImage:image];
+    [self setTextForSocialShare:vc hasImage:(image != nil)];
+    
+    if (image) {
+        [vc addImage:image];
+    }
+    
     [self addURLForSocialShare:vc];
     
     [self presentViewController:vc animated:YES completion:nil];
 }
 
-- (void)setTextForSocialShare:(SLComposeViewController *)vc {
+- (void)setTextForSocialShare:(SLComposeViewController *)vc hasImage:(BOOL)hasImage {
     
     BOOL isFacebook = [self.activeSLServiceType isEqualToString:SLServiceTypeFacebook];
-    NSString *text = [NSString stringWithFormat:@"Rick and I feel%@ %@ #rickface", (isFacebook ? @"" : @"ing"), [self.rickFaceMoodString lowercaseString]];
+    NSString *text = [NSString stringWithFormat:@"Rick and I feel%@ %@ #rickface", (isFacebook && hasImage ? @"" : @"ing"), [self.moodLabel.text lowercaseString]];
     [vc setInitialText:text];
 }
 
@@ -52,4 +56,8 @@ typedef void(^CompletionBlock)();
     return @"http://itunes.apple.com/app/rickface/id882560160";
 }
 
+- (IBAction)postWithoutPhotoPressed:(id)sender {
+    
+    [self showShareScreenWithImage:self.rickFaceImageView.image];
+}
 @end

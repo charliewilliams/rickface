@@ -12,6 +12,7 @@
 
 @property (nonatomic, strong) NSString *activeSLServiceType;
 @property (nonatomic, weak) IBOutlet UIImageView *rickFaceImageView;
-@property (nonatomic, strong) NSString *rickFaceMoodString;
+@property (weak, nonatomic) IBOutlet UILabel *moodLabel;
+@property (weak, nonatomic) IBOutlet UILabel *userFeelsLabel;
 
 @end
