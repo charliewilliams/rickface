@@ -60,4 +60,5 @@ typedef void(^CompletionBlock)();
     
     [self showShareScreenWithImage:self.rickFaceImageView.image];
 }
+
 @end

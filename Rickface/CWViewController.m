@@ -43,8 +43,8 @@
     self.view.backgroundColor = [UIColor lightGrayColor];
     self.bottomBlackView.alpha = 0.0;
     
-    if (![self.store boolForKey:kHasShownFirstUX]) {
-        
+//    if (![self.store boolForKey:kHasShownFirstUX]) {
+    
         self.launchAnimationImageView.image = [self animationImages][0];
         self.launchAnimationImageView.animationImages = [self animationImages];
         CGFloat duration = 3.;
@@ -65,8 +65,8 @@
             }];
         });
         
-        [self.store setBool:YES forKey:kHasShownFirstUX];
-    }
+//        [self.store setBool:YES forKey:kHasShownFirstUX];
+//    }
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.rickFeelsLabel.alpha = 0.0;
