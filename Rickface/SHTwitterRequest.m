@@ -29,13 +29,13 @@
         ACAccountStore *accountStore = [[ACAccountStore alloc] init];
         ACAccountType *twitterAccountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
         self.authorizedAccount.accountType = twitterAccountType;
-        DLog(@"Setting missing account type: %@", self.authorizedAccount.accountType);
+        NSLog(@"Setting missing account type: %@", self.authorizedAccount.accountType);
     }
     
     if (!self.authorizedAccount) {
         
         if (error) {
-            DLog(@"Error with twitter request: %@", *error);
+            NSLog(@"Error with twitter request: %@", *error);
         }
         return nil;
     }
