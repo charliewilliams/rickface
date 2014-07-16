@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		C056E72F197677CF0083BB9E /* SHTwitterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C056E72C197677CF0083BB9E /* SHTwitterRequest.m */; };
 		C056E730197677CF0083BB9E /* SHTwitterRequestFollow.m in Sources */ = {isa = PBXBuildFile; fileRef = C056E72E197677CF0083BB9E /* SHTwitterRequestFollow.m */; };
+		C056E7531976E6DB0083BB9E /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C056E7521976E6DB0083BB9E /* libGoogleAnalyticsServices.a */; };
+		C056E7551976E9EF0083BB9E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C056E7541976E9EF0083BB9E /* CoreData.framework */; };
+		C056E7571976E9F90083BB9E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C056E7561976E9F90083BB9E /* libz.dylib */; };
 		C05B1C0A1933B25B001DE063 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05B1C091933B25B001DE063 /* Foundation.framework */; };
 		C05B1C0C1933B25B001DE063 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05B1C0B1933B25B001DE063 /* CoreGraphics.framework */; };
 		C05B1C0E1933B25B001DE063 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05B1C0D1933B25B001DE063 /* UIKit.framework */; };
@@ -63,6 +66,19 @@
 		C056E72C197677CF0083BB9E /* SHTwitterRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTwitterRequest.m; sourceTree = "<group>"; };
 		C056E72D197677CF0083BB9E /* SHTwitterRequestFollow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHTwitterRequestFollow.h; sourceTree = "<group>"; };
 		C056E72E197677CF0083BB9E /* SHTwitterRequestFollow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTwitterRequestFollow.m; sourceTree = "<group>"; };
+		C056E7481976E6DB0083BB9E /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		C056E7491976E6DB0083BB9E /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
+		C056E74A1976E6DB0083BB9E /* GAIEcommerceFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceFields.h; sourceTree = "<group>"; };
+		C056E74B1976E6DB0083BB9E /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProduct.h; sourceTree = "<group>"; };
+		C056E74C1976E6DB0083BB9E /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProductAction.h; sourceTree = "<group>"; };
+		C056E74D1976E6DB0083BB9E /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommercePromotion.h; sourceTree = "<group>"; };
+		C056E74E1976E6DB0083BB9E /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
+		C056E74F1976E6DB0083BB9E /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
+		C056E7501976E6DB0083BB9E /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		C056E7511976E6DB0083BB9E /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		C056E7521976E6DB0083BB9E /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
+		C056E7541976E9EF0083BB9E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C056E7561976E9F90083BB9E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C05B1C061933B25B001DE063 /* Rickface.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rickface.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C05B1C091933B25B001DE063 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C05B1C0B1933B25B001DE063 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -115,8 +131,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C056E7571976E9F90083BB9E /* libz.dylib in Frameworks */,
+				C056E7551976E9EF0083BB9E /* CoreData.framework in Frameworks */,
 				C0739DF91940DA250064035B /* FacebookSDK.framework in Frameworks */,
 				C05B1C4C1933B522001DE063 /* MobileCoreServices.framework in Frameworks */,
+				C056E7531976E6DB0083BB9E /* libGoogleAnalyticsServices.a in Frameworks */,
 				C05B1C4B1933B515001DE063 /* SystemConfiguration.framework in Frameworks */,
 				C05B1C0C1933B25B001DE063 /* CoreGraphics.framework in Frameworks */,
 				C05B1C0E1933B25B001DE063 /* UIKit.framework in Frameworks */,
@@ -138,6 +157,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C056E7471976E6DB0083BB9E /* GAI */ = {
+			isa = PBXGroup;
+			children = (
+				C056E7481976E6DB0083BB9E /* GAI.h */,
+				C056E7491976E6DB0083BB9E /* GAIDictionaryBuilder.h */,
+				C056E74A1976E6DB0083BB9E /* GAIEcommerceFields.h */,
+				C056E74B1976E6DB0083BB9E /* GAIEcommerceProduct.h */,
+				C056E74C1976E6DB0083BB9E /* GAIEcommerceProductAction.h */,
+				C056E74D1976E6DB0083BB9E /* GAIEcommercePromotion.h */,
+				C056E74E1976E6DB0083BB9E /* GAIFields.h */,
+				C056E74F1976E6DB0083BB9E /* GAILogger.h */,
+				C056E7501976E6DB0083BB9E /* GAITrackedViewController.h */,
+				C056E7511976E6DB0083BB9E /* GAITracker.h */,
+				C056E7521976E6DB0083BB9E /* libGoogleAnalyticsServices.a */,
+			);
+			path = GAI;
+			sourceTree = "<group>";
+		};
 		C05B1BFD1933B25B001DE063 = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +197,8 @@
 		C05B1C081933B25B001DE063 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C056E7561976E9F90083BB9E /* libz.dylib */,
+				C056E7541976E9EF0083BB9E /* CoreData.framework */,
 				C0739DF81940DA250064035B /* FacebookSDK.framework */,
 				C05B1C4A1933B515001DE063 /* SystemConfiguration.framework */,
 				C05B1C441933B4DD001DE063 /* MobileCoreServices.framework */,
@@ -199,6 +238,7 @@
 		C05B1C101933B25B001DE063 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C056E7471976E6DB0083BB9E /* GAI */,
 				C0739DFD1940E3CD0064035B /* FontAwesome.otf */,
 				C0DC6289193FBE16002F228F /* 001.jpg */,
 				C0DC628A193FBE16002F228F /* 011.jpg */,
@@ -504,6 +544,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Rickface/Rickface-Prefix.pch";
 				INFOPLIST_FILE = "Rickface/Rickface-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Rickface",
+					"$(PROJECT_DIR)/Rickface/GAI",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -525,6 +570,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Rickface/Rickface-Prefix.pch";
 				INFOPLIST_FILE = "Rickface/Rickface-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Rickface",
+					"$(PROJECT_DIR)/Rickface/GAI",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
