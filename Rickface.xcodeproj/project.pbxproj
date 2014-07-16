@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C056E72F197677CF0083BB9E /* SHTwitterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C056E72C197677CF0083BB9E /* SHTwitterRequest.m */; };
+		C056E730197677CF0083BB9E /* SHTwitterRequestFollow.m in Sources */ = {isa = PBXBuildFile; fileRef = C056E72E197677CF0083BB9E /* SHTwitterRequestFollow.m */; };
 		C05B1C0A1933B25B001DE063 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05B1C091933B25B001DE063 /* Foundation.framework */; };
 		C05B1C0C1933B25B001DE063 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05B1C0B1933B25B001DE063 /* CoreGraphics.framework */; };
 		C05B1C0E1933B25B001DE063 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05B1C0D1933B25B001DE063 /* UIKit.framework */; };
@@ -57,6 +59,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C056E72B197677CF0083BB9E /* SHTwitterRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHTwitterRequest.h; sourceTree = "<group>"; };
+		C056E72C197677CF0083BB9E /* SHTwitterRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTwitterRequest.m; sourceTree = "<group>"; };
+		C056E72D197677CF0083BB9E /* SHTwitterRequestFollow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHTwitterRequestFollow.h; sourceTree = "<group>"; };
+		C056E72E197677CF0083BB9E /* SHTwitterRequestFollow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTwitterRequestFollow.m; sourceTree = "<group>"; };
 		C05B1C061933B25B001DE063 /* Rickface.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rickface.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C05B1C091933B25B001DE063 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C05B1C0B1933B25B001DE063 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -180,6 +186,10 @@
 				C0739DF51940D8D30064035B /* TakePhotoViewController.m */,
 				C0739DFA1940DDB20064035B /* TakePhotoViewController+SocialShare.h */,
 				C0739DFB1940DDB20064035B /* TakePhotoViewController+SocialShare.m */,
+				C056E72B197677CF0083BB9E /* SHTwitterRequest.h */,
+				C056E72C197677CF0083BB9E /* SHTwitterRequest.m */,
+				C056E72D197677CF0083BB9E /* SHTwitterRequestFollow.h */,
+				C056E72E197677CF0083BB9E /* SHTwitterRequestFollow.m */,
 				C05B1C211933B25B001DE063 /* Images.xcassets */,
 				C05B1C101933B25B001DE063 /* Supporting Files */,
 			);
@@ -348,10 +358,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C056E72F197677CF0083BB9E /* SHTwitterRequest.m in Sources */,
 				C0739DF61940D8D30064035B /* TakePhotoViewController.m in Sources */,
 				C0739DFC1940DDB20064035B /* TakePhotoViewController+SocialShare.m in Sources */,
 				C05B1C1A1933B25B001DE063 /* CWAppDelegate.m in Sources */,
 				C05B1C161933B25B001DE063 /* main.m in Sources */,
+				C056E730197677CF0083BB9E /* SHTwitterRequestFollow.m in Sources */,
 				C05B1C201933B25B001DE063 /* CWViewController.m in Sources */,
 				C05B1C421933B458001DE063 /* NSObject+Helper.m in Sources */,
 			);
