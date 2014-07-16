@@ -12,6 +12,8 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 #import "TakePhotoViewController.h"
 #import "TakePhotoViewController+SocialShare.h"
 #import <Parse/Parse.h>
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
 @import AssetsLibrary;
 @import AVFoundation;
 @import Social;
@@ -181,6 +183,12 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 
 #pragma mark - UI Stuff
 - (IBAction)takePicture:(UIButton *)sender {
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSMutableDictionary *event = [[GAIDictionaryBuilder createEventWithCategory:@"Picture" action:@"Taken" label:self.moodLabel.text value:nil] build];
+        [[GAI sharedInstance].defaultTracker send:event];
+        [[GAI sharedInstance] dispatch];
+    });
     
     [self.captureSession stopRunning];
     

@@ -9,6 +9,8 @@
 #import "TakePhotoViewController+SocialShare.h"
 #import <FacebookSDK/FacebookSDK.h>
 #import <Parse/Parse.h>
+#import "GAI/GAI.h"
+#import "GAIDictionaryBuilder.h"
 @import Social;
 
 typedef void(^CompletionBlock)();
@@ -57,6 +59,10 @@ typedef void(^CompletionBlock)();
 }
 
 - (IBAction)postWithoutPhotoPressed:(id)sender {
+    
+    NSMutableDictionary *event = [[GAIDictionaryBuilder createEventWithCategory:@"Face" action:@"Share-no-photo" label:self.moodLabel.text value:nil] build];
+    [[GAI sharedInstance].defaultTracker send:event];
+    [[GAI sharedInstance] dispatch];
     
     [self showShareScreenWithImage:self.rickFaceImageView.image];
 }
