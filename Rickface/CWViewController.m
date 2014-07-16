@@ -11,6 +11,8 @@
 #import "NSObject+Helper.h"
 #import "TakePhotoViewController.h"
 #import "TakePhotoViewController+SocialShare.h"
+#import "GAI/GAI.h"
+#import "GAI/GAIDictionaryBuilder.h"
 @import Social;
 
 #define kHasShownFirstUX @"kHasShownFirstUX"
@@ -43,11 +45,11 @@
     self.view.backgroundColor = [UIColor lightGrayColor];
     self.bottomBlackView.alpha = 0.0;
     
-//    if (![self.store boolForKey:kHasShownFirstUX]) {
+    if (![self.store boolForKey:kHasShownFirstUX]) {
     
         self.launchAnimationImageView.image = [self animationImages][0];
         self.launchAnimationImageView.animationImages = [self animationImages];
-        CGFloat duration = 3.;
+        CGFloat duration = 2.5;
         self.launchAnimationImageView.animationDuration = duration;
         
         [self.launchAnimationImageView startAnimating];
@@ -65,8 +67,8 @@
             }];
         });
         
-//        [self.store setBool:YES forKey:kHasShownFirstUX];
-//    }
+        [self.store setBool:YES forKey:kHasShownFirstUX];
+    }
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.rickFeelsLabel.alpha = 0.0;
@@ -211,6 +213,10 @@
 //    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         self.faceImageView.image = image;
         self.moodLine1Label.text = mood;
+    
+    NSMutableDictionary *event = [[GAIDictionaryBuilder createEventWithCategory:@"Face" action:@"Shown" label:mood value:nil] build];
+    [[GAI sharedInstance].defaultTracker send:event];
+    [[GAI sharedInstance] dispatch];
 //    });
 }
 
@@ -219,6 +225,9 @@
 - (IBAction)facebookPressed:(id)sender {
     
     if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+        NSMutableDictionary *event = [[GAIDictionaryBuilder createEventWithCategory:@"Social" action:@"Share-facebook" label:@"failed" value:nil] build];
+        [[GAI sharedInstance].defaultTracker send:event];
+        [[GAI sharedInstance] dispatch];
         [self shareFailed];
         return;
     }
@@ -228,6 +237,9 @@
 - (IBAction)twitterPressed:(id)sender {
     
     if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+        NSMutableDictionary *event = [[GAIDictionaryBuilder createEventWithCategory:@"Social" action:@"Share-twitter" label:@"failed" value:nil] build];
+        [[GAI sharedInstance].defaultTracker send:event];
+        [[GAI sharedInstance] dispatch];
         [self shareFailed];
         return;
     }
@@ -286,6 +298,10 @@
 #pragma mark - Transition to photo
 
 - (void)showPhotoScreenForService:(NSString *)service {
+    
+    NSMutableDictionary *event = [[GAIDictionaryBuilder createEventWithCategory:@"Share" action:@"Photo-screen" label:service value:nil] build];
+    [[GAI sharedInstance].defaultTracker send:event];
+    [[GAI sharedInstance] dispatch];
     
     NSString *userName = nil;
     
