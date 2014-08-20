@@ -14,10 +14,13 @@
 #import "GAI/GAI.h"
 #import "GAI/GAIDictionaryBuilder.h"
 @import Social;
+@import CoreMotion;
 
 #define kHasShownFirstUX @"kHasShownFirstUX"
 
-@interface CWViewController ()
+@interface CWViewController () {
+    BOOL histeresisExcited;
+}
 
 @property (weak, nonatomic) IBOutlet UIImageView *launchAnimationImageView;
 @property (weak, nonatomic) IBOutlet UIImageView *introRickPortraitImageView;
@@ -29,6 +32,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *faceImageView;
 @property (weak, nonatomic) IBOutlet UILabel *moodLine1Label;
 @property (weak, nonatomic) IBOutlet UIView *sharingContainerView;
+
+@property (nonatomic, assign) CMAcceleration *lastAcceleration;
 
 @end
 
@@ -81,14 +86,15 @@
     self.sharingContainerView.alpha = 0.0;
 
     [self downloadFaces];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(foregrounded) name:UIApplicationDidBecomeActiveNotification object:nil];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+- (void)foregrounded {
     
-    [super viewDidAppear:animated];
-    
-//#warning Debug only!
-//    [self showNewFace];
+    if (!self.launchAnimationImageView.image) {
+        [self showNewFace];
+    }
 }
 
 - (void)downloadFaces {
@@ -142,6 +148,36 @@
     }
 }
 
+// Ensures the shake is strong enough on at least two axes before declaring it a shake.
+// "Strong enough" means "greater than a client-supplied threshold" in G's.
+static BOOL accelerationIsShaking(CMAcceleration *last, CMAcceleration *current, double threshold) {
+	double
+    deltaX = fabs(last->x - current->x),
+    deltaY = fabs(last->y - current->y),
+    deltaZ = fabs(last->z - current->z);
+    
+	return
+    (deltaX > threshold && deltaY > threshold) ||
+    (deltaX > threshold && deltaZ > threshold) ||
+    (deltaY > threshold && deltaZ > threshold);
+}
+
+- (void)accelerometer:(CMAcceleration *)accelerometer didAccelerate:(CMAcceleration *)acceleration {
+    
+	if (self.lastAcceleration) {
+		if (!histeresisExcited && accelerationIsShaking(self.lastAcceleration, acceleration, 0.7)) {
+			histeresisExcited = YES;
+            
+            [self showNewFace];
+            
+		} else if (histeresisExcited && !accelerationIsShaking(self.lastAcceleration, acceleration, 0.2)) {
+			histeresisExcited = NO;
+		}
+	}
+    
+	self.lastAcceleration = acceleration;
+}
+
 - (void)showNewFace {
     
      [UIView animateWithDuration:0.6 delay:0 options:UIViewAnimationOptionAllowUserInteraction animations:^{
@@ -157,6 +193,8 @@
         self.introRickPortraitImageView.alpha = 0.0;
         
     } completion:^(BOOL finished) {
+        
+        self.launchAnimationImageView.image = nil;
         
         [self showNewFaceImpl];
         
