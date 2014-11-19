@@ -124,7 +124,10 @@
                     DLog(@"%@", error);
                 }
                 
-                [data writeToFile:path atomically:NO];
+                NSURL *url = [NSURL fileURLWithPath:path];
+                [data writeToURL:url atomically:NO];
+                [self addSkipBackupAttributeToItemAtURL:url];
+//                [data writeToFile:path atomically:NO];
             }];
         }
         
@@ -138,6 +141,18 @@
             }
         }
     }];
+}
+
+- (BOOL)addSkipBackupAttributeToItemAtURL:(NSURL *)URL {
+    
+    NSAssert([[NSFileManager defaultManager] fileExistsAtPath:[URL path]], @"Only add attribute to existing file");
+    
+    NSError *error = nil;
+    BOOL success = [URL setResourceValue:[NSNumber numberWithBool:YES] forKey:NSURLIsExcludedFromBackupKey error:&error];
+    if (!success) {
+        NSLog(@"Error excluding %@ from backup %@", [URL lastPathComponent], error);
+    }
+    return success;
 }
 
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
@@ -221,41 +236,32 @@ static BOOL accelerationIsShaking(CMAcceleration *last, CMAcceleration *current,
     NSUInteger numberOfFaces = [facePaths count];
     
     if (!numberOfFaces) {
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self showNewFaceImpl];
+        });
         return;
     }
     
     NSUInteger faceNumber = arc4random() % numberOfFaces;
-//    NSUInteger facesToAnimate = 10;
-//    
-//    NSMutableArray *images = [NSMutableArray array];
-//    NSMutableArray *moods = [NSMutableArray array];
     
     NSString *mood;
     UIImage *image;
-    
-//    for (NSInteger i=0; i<facesToAnimate; i++) {
     
     mood = facePaths[faceNumber % numberOfFaces];
     NSString *path = [self.documentsDirectory stringByAppendingPathComponent:mood];
     NSData *data = [NSData dataWithContentsOfFile:path];
     image = [UIImage imageWithData:data scale:2.0];
     
-//        [moods addObject:mood];
-//        [images addObject:image];
-//    }
-//    
-//    self.faceImageView.animationImages = images;
-//    self.faceImageView.animationDuration = 0.4;
-//    [self.faceImageView startAnimating];
-//    
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.4 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        self.faceImageView.image = image;
-        self.moodLine1Label.text = mood;
+    if (!image) {
+        [self showNewFaceImpl];
+    }
+    self.faceImageView.image = image;
+    self.moodLine1Label.text = mood;
     
     NSMutableDictionary *event = [[GAIDictionaryBuilder createEventWithCategory:@"Face" action:@"Shown" label:mood value:nil] build];
     [[GAI sharedInstance].defaultTracker send:event];
     [[GAI sharedInstance] dispatch];
-//    });
 }
 
 #pragma mark - Social Share

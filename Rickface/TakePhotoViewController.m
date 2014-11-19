@@ -165,6 +165,7 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 {
 	
 	[connection setVideoOrientation:AVCaptureVideoOrientationPortrait];
+    [connection setVideoMirrored:YES];
 	
 	CVPixelBufferRef ref = CMSampleBufferGetImageBuffer(sampleBuffer);
 	CIImage *image = [CIImage imageWithCVPixelBuffer:ref];
