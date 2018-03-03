@@ -7,7 +7,6 @@
 //
 
 #import "CWViewController.h"
-#import <Parse/Parse.h>
 #import "NSObject+Helper.h"
 #import "TakePhotoViewController.h"
 #import "TakePhotoViewController+SocialShare.h"
@@ -84,8 +83,6 @@
     self.faceImageView.alpha = 0.0;
     self.moodLine1Label.alpha = 0.0;
     self.sharingContainerView.alpha = 0.0;
-
-    [self downloadFaces];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(foregrounded) name:UIApplicationDidBecomeActiveNotification object:nil];
 }
@@ -95,52 +92,6 @@
     if (!self.launchAnimationImageView.image) {
         [self showNewFace];
     }
-}
-
-- (void)downloadFaces {
-    
-    NSError *error = nil;
-    NSMutableArray *facePaths = [[self.fileManager contentsOfDirectoryAtPath:self.documentsDirectory error:&error] mutableCopy];
-    if (error) {
-        DLog(@"%@", error);
-    }
-    
-    PFQuery *downloadQuery = [PFQuery queryWithClassName:@"Face"];
-    [downloadQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-       
-        for (PFObject *face in objects) {
-            
-            NSString *moodString = face[@"emotion"];
-            [facePaths removeObject:moodString];
-            NSString *path = [self.documentsDirectory stringByAppendingPathComponent:moodString];
-            if ([self.fileManager fileExistsAtPath:path]) {
-                continue;
-            }
-            
-            PFFile *file = face[@"image_640_1137"];
-            [file getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-                
-                if (error) {
-                    DLog(@"%@", error);
-                }
-                
-                NSURL *url = [NSURL fileURLWithPath:path];
-                [data writeToURL:url atomically:NO];
-                [self addSkipBackupAttributeToItemAtURL:url];
-//                [data writeToFile:path atomically:NO];
-            }];
-        }
-        
-        for (NSString *face in facePaths) {
-
-            error = nil;
-            NSString *path = [self.documentsDirectory stringByAppendingPathComponent:face];
-            [[NSFileManager defaultManager] removeItemAtPath:path error:&error];
-            if (error) {
-                DLog(@"%@", error);
-            }
-        }
-    }];
 }
 
 - (BOOL)addSkipBackupAttributeToItemAtURL:(NSURL *)URL {
@@ -349,11 +300,11 @@ static BOOL accelerationIsShaking(CMAcceleration *last, CMAcceleration *current,
     
     NSString *userName = nil;
     
-    if ([service isEqualToString:SLServiceTypeFacebook]) {
-        userName = [PFTwitterUtils twitter].screenName;
-    } else if ([service isEqualToString:SLServiceTypeTwitter]) {
-        userName = [[PFUser currentUser] username];
-    }
+//    if ([service isEqualToString:SLServiceTypeFacebook]) {
+//        userName = [ twitter].screenName;
+//    } else if ([service isEqualToString:SLServiceTypeTwitter]) {
+//        userName = [[PFUser currentUser] username];
+//    }
     
     TakePhotoViewController *tpvc = [self.storyboard instantiateViewControllerWithIdentifier:@"TakePhotoViewController"];
     [tpvc view];

@@ -6,8 +6,10 @@
 //  Copyright (c) 2014 Charlie Williams. All rights reserved.
 //
 
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
 #import "CWAppDelegate.h"
-#import <Parse/Parse.h>
 
 #define kTrackingId @"UA-33416008-6"
 
@@ -18,10 +20,8 @@
     [GAI sharedInstance].dispatchInterval = 120;
     [GAI sharedInstance].trackUncaughtExceptions = YES;
     self.tracker = [[GAI sharedInstance] trackerWithName:@"Rickface" trackingId:kTrackingId];
-    
-    [Parse setApplicationId:@"dcpXwcx2N0XAHthxRllbAPGKAaYpgxu6KJ41HCv4" clientKey:@"INZwaPE1B0jJITP8MV0HUD0sKsRsY7gIScuqhR7X"];
-    
-    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+
+    [Fabric with:@[[Crashlytics class]]];
     
     return YES;
 }

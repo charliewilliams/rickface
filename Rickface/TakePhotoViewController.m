@@ -11,7 +11,6 @@ static void * SessionRunningAndDeviceAuthorizedContext = &SessionRunningAndDevic
 
 #import "TakePhotoViewController.h"
 #import "TakePhotoViewController+SocialShare.h"
-#import <Parse/Parse.h>
 #import "GAI.h"
 #import "GAIDictionaryBuilder.h"
 @import AssetsLibrary;

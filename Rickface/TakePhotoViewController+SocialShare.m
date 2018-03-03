@@ -7,13 +7,11 @@
 //
 
 #import "TakePhotoViewController+SocialShare.h"
-#import <FacebookSDK/FacebookSDK.h>
-#import <Parse/Parse.h>
 #import "GAI/GAI.h"
 #import "GAIDictionaryBuilder.h"
 @import Social;
 
-typedef void(^CompletionBlock)();
+typedef void(^CompletionBlock)(void);
 
 @implementation TakePhotoViewController (SocialShare)
 
