@@ -8,7 +8,7 @@
 
 #import "Rickface-Swift.h"
 
-#import "CWViewController.h"
+#import "RickfaceMainViewController.h"
 #import "NSObject+Helper.h"
 #import "TakePhotoViewController.h"
 #import "TakePhotoViewController+SocialShare.h"
@@ -16,9 +16,7 @@
 #import "GAI/GAIDictionaryBuilder.h"
 @import Social;
 
-#define kHasShownFirstUX @"kHasShownFirstUX"
-
-@interface CWViewController () {
+@interface RickfaceMainViewController () {
     BOOL histeresisExcited;
 }
 
@@ -36,15 +34,22 @@
 
 @end
 
-@implementation CWViewController
+@implementation RickfaceMainViewController
 
 - (void)viewDidLoad {
     
     [super viewDidLoad];
     
     [self setUpLaunchUI];
-    
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(setUpLaunchUI) name:UIApplicationDidEnterBackgroundNotification object:nil];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+
+    [super viewWillAppear:animated];
+
+    [self becomeFirstResponder];
 }
 
 - (void)setUpLaunchUI {
@@ -70,7 +75,7 @@
 }
 
 - (void)motionEnded:(UIEventSubtype)motion withEvent:(UIEvent *)event {
-    
+
     if (motion == UIEventSubtypeMotionShake) {
             
         [self showNewFace];

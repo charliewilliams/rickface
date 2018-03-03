@@ -23,7 +23,7 @@
 		C05B1C161933B25B001DE063 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C05B1C151933B25B001DE063 /* main.m */; };
 		C05B1C1A1933B25B001DE063 /* CWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C05B1C191933B25B001DE063 /* CWAppDelegate.m */; };
 		C05B1C1D1933B25B001DE063 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C05B1C1B1933B25B001DE063 /* Main.storyboard */; };
-		C05B1C201933B25B001DE063 /* CWViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C05B1C1F1933B25B001DE063 /* CWViewController.m */; };
+		C05B1C201933B25B001DE063 /* RickfaceMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C05B1C1F1933B25B001DE063 /* RickfaceMainViewController.m */; };
 		C05B1C221933B25B001DE063 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C05B1C211933B25B001DE063 /* Images.xcassets */; };
 		C05B1C291933B25B001DE063 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05B1C281933B25B001DE063 /* XCTest.framework */; };
 		C05B1C2A1933B25B001DE063 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05B1C091933B25B001DE063 /* Foundation.framework */; };
@@ -87,8 +87,8 @@
 		C05B1C181933B25B001DE063 /* CWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWAppDelegate.h; sourceTree = "<group>"; };
 		C05B1C191933B25B001DE063 /* CWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWAppDelegate.m; sourceTree = "<group>"; };
 		C05B1C1C1933B25B001DE063 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C05B1C1E1933B25B001DE063 /* CWViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWViewController.h; sourceTree = "<group>"; };
-		C05B1C1F1933B25B001DE063 /* CWViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWViewController.m; sourceTree = "<group>"; };
+		C05B1C1E1933B25B001DE063 /* RickfaceMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RickfaceMainViewController.h; sourceTree = "<group>"; };
+		C05B1C1F1933B25B001DE063 /* RickfaceMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RickfaceMainViewController.m; sourceTree = "<group>"; };
 		C05B1C211933B25B001DE063 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C05B1C271933B25B001DE063 /* RickfaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickfaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C05B1C281933B25B001DE063 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -212,8 +212,8 @@
 				C05B1C191933B25B001DE063 /* CWAppDelegate.m */,
 				C0F0C9B4204B0D6200635898 /* Face.swift */,
 				C05B1C1B1933B25B001DE063 /* Main.storyboard */,
-				C05B1C1E1933B25B001DE063 /* CWViewController.h */,
-				C05B1C1F1933B25B001DE063 /* CWViewController.m */,
+				C05B1C1E1933B25B001DE063 /* RickfaceMainViewController.h */,
+				C05B1C1F1933B25B001DE063 /* RickfaceMainViewController.m */,
 				C05B1C401933B458001DE063 /* NSObject+Helper.h */,
 				C05B1C411933B458001DE063 /* NSObject+Helper.m */,
 				C0739DF41940D8D30064035B /* TakePhotoViewController.h */,
@@ -511,7 +511,7 @@
 				C05B1C161933B25B001DE063 /* main.m in Sources */,
 				C0F0C9B9204B0EE200635898 /* Collection.swift in Sources */,
 				C056E730197677CF0083BB9E /* SHTwitterRequestFollow.m in Sources */,
-				C05B1C201933B25B001DE063 /* CWViewController.m in Sources */,
+				C05B1C201933B25B001DE063 /* RickfaceMainViewController.m in Sources */,
 				C05B1C421933B458001DE063 /* NSObject+Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

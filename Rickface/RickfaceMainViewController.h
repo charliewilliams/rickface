@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 @import MessageUI;
 
-@interface CWViewController : UIViewController <MFMailComposeViewControllerDelegate>
+@interface RickfaceMainViewController : UIViewController <MFMailComposeViewControllerDelegate>
 
 @end
