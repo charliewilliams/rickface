@@ -8,7 +8,7 @@ target 'Rickface' do
 
   # Pods for Rickface
   #  pod 'Facebook-iOS-SDK'
-     pod 'FBSDKCoreKit'
+#     pod 'FBSDKCoreKit'
 
   target 'RickfaceTests' do
     inherit! :search_paths
