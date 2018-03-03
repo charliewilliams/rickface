@@ -34,7 +34,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aq6-1D-IHP">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aq6-1D-IHP" userLabel="Translucent placeholder">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="31"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
@@ -84,10 +84,10 @@ Try it now: Think of something, give a shake... and see how Rick feels about it.
                                 <rect key="frame" x="0.0" y="603" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ggd-1p-ery" userLabel="fb-share">
-                                        <rect key="frame" x="0.0" y="0.0" width="155" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ggd-1p-ery" userLabel="fb-share">
+                                        <rect key="frame" x="0.0" y="0.0" width="175" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                         <inset key="contentEdgeInsets" minX="26" minY="0.0" maxX="-5" maxY="0.0"/>
                                         <state key="normal" title="Share your Rickface" backgroundImage="fb_share">
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -96,11 +96,11 @@ Try it now: Think of something, give a shake... and see how Rick feels about it.
                                             <action selector="facebookPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="MqO-DV-7Lm"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Obj-33-jqC" userLabel="tw-share">
-                                        <rect key="frame" x="220" y="0.0" width="155" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
-                                        <inset key="contentEdgeInsets" minX="32" minY="0.0" maxX="-5" maxY="0.0"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Obj-33-jqC" userLabel="tw-share">
+                                        <rect key="frame" x="202" y="0.0" width="175" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
+                                        <inset key="contentEdgeInsets" minX="32" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Tweet your Rickface" backgroundImage="tw_share">
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
@@ -115,10 +115,6 @@ Try it now: Think of something, give a shake... and see how Rick feels about it.
                                 <rect key="frame" x="73" y="193" width="230" height="230"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="acI-Fi-7fj" userLabel="Launch Image View">
-                                <rect key="frame" x="0.0" y="207" width="320" height="460"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -126,17 +122,17 @@ Try it now: Think of something, give a shake... and see how Rick feels about it.
                         <outlet property="bottomBlackView" destination="pQO-zk-tc8" id="RMB-x1-cBH"/>
                         <outlet property="faceImageView" destination="M3L-oK-C8a" id="nqn-K5-wmy"/>
                         <outlet property="introRickPortraitImageView" destination="rMw-cM-I11" id="rSQ-Xs-b2Y"/>
-                        <outlet property="launchAnimationImageView" destination="acI-Fi-7fj" id="OTO-sz-1zG"/>
                         <outlet property="moodLine1Label" destination="oxG-oK-o5k" id="jbe-xh-3RT"/>
                         <outlet property="rickFaceAboutLabel" destination="xjJ-Yb-57J" id="CDa-Wy-iTY"/>
                         <outlet property="rickFaceTitleLabel" destination="Tc2-FL-VEm" id="Veh-S5-T3z"/>
                         <outlet property="rickFeelsLabel" destination="JPg-Fm-uaJ" id="OjI-ZL-piY"/>
                         <outlet property="sharingContainerView" destination="TVA-X2-LNX" id="wdK-OS-wva"/>
+                        <outlet property="translucentPlaceholderLabel" destination="aq6-1D-IHP" id="tbG-IT-PVN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="255" y="92"/>
+            <point key="canvasLocation" x="254.5" y="91.5"/>
         </scene>
         <!--Take Photo View Controller-->
         <scene sceneID="rn6-8T-GN0">
@@ -229,7 +225,7 @@ Try it now: Think of something, give a shake... and see how Rick feels about it.
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ys-y1-7bD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="621" y="92"/>
+            <point key="canvasLocation" x="719" y="92"/>
         </scene>
     </scenes>
     <resources>
