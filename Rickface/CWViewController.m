@@ -6,6 +6,8 @@
 //  Copyright (c) 2014 Charlie Williams. All rights reserved.
 //
 
+#import "Rickface-Swift.h"
+
 #import "CWViewController.h"
 #import "NSObject+Helper.h"
 #import "TakePhotoViewController.h"
@@ -173,44 +175,16 @@ static BOOL accelerationIsShaking(CMAcceleration *last, CMAcceleration *current,
             self.sharingContainerView.alpha = 1.0;
         }];
     }];
-    
-
 }
 
 - (void)showNewFaceImpl {
     
-    NSError *error = nil;
-    NSArray *facePaths = [self.fileManager contentsOfDirectoryAtPath:self.documentsDirectory error:&error];
-    if (error) {
-        DLog(@"%@", error);
-    }
-    NSUInteger numberOfFaces = [facePaths count];
+    Face *face = [Face random];
+
+    self.faceImageView.image = face.image;
+    self.moodLine1Label.text = face.emotion;
     
-    if (!numberOfFaces) {
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self showNewFaceImpl];
-        });
-        return;
-    }
-    
-    NSUInteger faceNumber = arc4random() % numberOfFaces;
-    
-    NSString *mood;
-    UIImage *image;
-    
-    mood = facePaths[faceNumber % numberOfFaces];
-    NSString *path = [self.documentsDirectory stringByAppendingPathComponent:mood];
-    NSData *data = [NSData dataWithContentsOfFile:path];
-    image = [UIImage imageWithData:data scale:2.0];
-    
-    if (!image) {
-        [self showNewFaceImpl];
-    }
-    self.faceImageView.image = image;
-    self.moodLine1Label.text = mood;
-    
-    NSMutableDictionary *event = [[GAIDictionaryBuilder createEventWithCategory:@"Face" action:@"Shown" label:mood value:nil] build];
+    NSMutableDictionary *event = [[GAIDictionaryBuilder createEventWithCategory:@"Face" action:@"Shown" label:face.emotion value:nil] build];
     [[GAI sharedInstance].defaultTracker send:event];
     [[GAI sharedInstance] dispatch];
 }
@@ -252,9 +226,9 @@ static BOOL accelerationIsShaking(CMAcceleration *last, CMAcceleration *current,
 }
 
 - (void)shareFailed {
-    
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Not logged in" message:@"Please log in on this device in order to share Rickface." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
+
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Not logged in" message:@"Please log in on this device in order to share Rickface." preferredStyle:UIAlertControllerStyleAlert];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 #pragma mark - Intro
@@ -281,11 +255,12 @@ static BOOL accelerationIsShaking(CMAcceleration *last, CMAcceleration *current,
     
     NSMutableArray *images = [NSMutableArray array];
     for (NSString *name in imageNames) {
-        
-        NSString *path = [[NSBundle mainBundle] pathForResource:name ofType:nil];
-        NSData *data = [NSData dataWithContentsOfFile:path];
-        UIImage *image = [UIImage imageWithData:data scale:2.0];
-        [images addObject:image];
+
+        UIImage *image = [UIImage imageNamed:name];
+
+        if (image) {
+            [images addObject:image];
+        }
     }
     return images;
 }
