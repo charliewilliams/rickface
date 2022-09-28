@@ -12,7 +12,7 @@
 @implementation NSObject (Helper)
 
 - (BOOL)isPad {
-    return UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad;
+    return [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad;
 }
 
 - (BOOL)is4inch {

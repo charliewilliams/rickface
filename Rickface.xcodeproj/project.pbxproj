@@ -7,10 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4716586BCC5962070DD2CFFE /* libPods-RickfaceTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C9D0C94C6BDCF9ECD9A612D7 /* libPods-RickfaceTests.a */; };
-		4EF4CF0BEA5033DE7DE37BCF /* libPods-Rickface.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D47D836F1D9FFD69C20776F2 /* libPods-Rickface.a */; };
 		C00013F32049F6D600990D7B /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C00013F12049F6D600990D7B /* Fabric.framework */; };
 		C00013F42049F6D600990D7B /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C00013F22049F6D600990D7B /* Crashlytics.framework */; };
+		C00E8D7928E4403100CA5AF3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00E8D7828E4403100CA5AF3 /* Launch Screen.storyboard */; };
 		C056E72F197677CF0083BB9E /* SHTwitterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C056E72C197677CF0083BB9E /* SHTwitterRequest.m */; };
 		C056E730197677CF0083BB9E /* SHTwitterRequestFollow.m in Sources */ = {isa = PBXBuildFile; fileRef = C056E72E197677CF0083BB9E /* SHTwitterRequestFollow.m */; };
 		C056E7531976E6DB0083BB9E /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C056E7521976E6DB0083BB9E /* libGoogleAnalyticsServices.a */; };
@@ -53,12 +52,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		12E16383A7229092DCC769E2 /* Pods-Rickface.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rickface.release.xcconfig"; path = "Pods/Target Support Files/Pods-Rickface/Pods-Rickface.release.xcconfig"; sourceTree = "<group>"; };
-		6F68EEE592EB2AF53175829F /* Pods-RickfaceTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickfaceTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RickfaceTests/Pods-RickfaceTests.release.xcconfig"; sourceTree = "<group>"; };
-		91D40B16C282265D5EEE7662 /* Pods-RickfaceTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RickfaceTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RickfaceTests/Pods-RickfaceTests.debug.xcconfig"; sourceTree = "<group>"; };
-		AD10E982C84FE2708A12D37D /* Pods-Rickface.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Rickface.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Rickface/Pods-Rickface.debug.xcconfig"; sourceTree = "<group>"; };
 		C00013F12049F6D600990D7B /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		C00013F22049F6D600990D7B /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		C00E8D7828E4403100CA5AF3 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		C056E72B197677CF0083BB9E /* SHTwitterRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHTwitterRequest.h; sourceTree = "<group>"; };
 		C056E72C197677CF0083BB9E /* SHTwitterRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTwitterRequest.m; sourceTree = "<group>"; };
 		C056E72D197677CF0083BB9E /* SHTwitterRequestFollow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHTwitterRequestFollow.h; sourceTree = "<group>"; };
@@ -109,8 +105,6 @@
 		C0F0C9B4204B0D6200635898 /* Face.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Face.swift; sourceTree = "<group>"; };
 		C0F0C9B6204B0EDC00635898 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
 		C0F0C9B8204B0EE200635898 /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
-		C9D0C94C6BDCF9ECD9A612D7 /* libPods-RickfaceTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RickfaceTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D47D836F1D9FFD69C20776F2 /* libPods-Rickface.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Rickface.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,7 +121,6 @@
 				C05B1C0C1933B25B001DE063 /* CoreGraphics.framework in Frameworks */,
 				C05B1C0E1933B25B001DE063 /* UIKit.framework in Frameworks */,
 				C05B1C0A1933B25B001DE063 /* Foundation.framework in Frameworks */,
-				4EF4CF0BEA5033DE7DE37BCF /* libPods-Rickface.a in Frameworks */,
 				C00013F42049F6D600990D7B /* Crashlytics.framework in Frameworks */,
 				C00013F32049F6D600990D7B /* Fabric.framework in Frameworks */,
 			);
@@ -140,7 +133,6 @@
 				C05B1C291933B25B001DE063 /* XCTest.framework in Frameworks */,
 				C05B1C2B1933B25B001DE063 /* UIKit.framework in Frameworks */,
 				C05B1C2A1933B25B001DE063 /* Foundation.framework in Frameworks */,
-				4716586BCC5962070DD2CFFE /* libPods-RickfaceTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,7 +164,6 @@
 				C05B1C2E1933B25B001DE063 /* RickfaceTests */,
 				C05B1C081933B25B001DE063 /* Frameworks */,
 				C05B1C071933B25B001DE063 /* Products */,
-				E3DA77F772A4E86D39A58060 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -199,8 +190,6 @@
 				C05B1C0B1933B25B001DE063 /* CoreGraphics.framework */,
 				C05B1C0D1933B25B001DE063 /* UIKit.framework */,
 				C05B1C281933B25B001DE063 /* XCTest.framework */,
-				D47D836F1D9FFD69C20776F2 /* libPods-Rickface.a */,
-				C9D0C94C6BDCF9ECD9A612D7 /* libPods-RickfaceTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -212,6 +201,7 @@
 				C05B1C191933B25B001DE063 /* CWAppDelegate.m */,
 				C0F0C9B4204B0D6200635898 /* Face.swift */,
 				C05B1C1B1933B25B001DE063 /* Main.storyboard */,
+				C00E8D7828E4403100CA5AF3 /* Launch Screen.storyboard */,
 				C05B1C1E1933B25B001DE063 /* RickfaceMainViewController.h */,
 				C05B1C1F1933B25B001DE063 /* RickfaceMainViewController.m */,
 				C05B1C401933B458001DE063 /* NSObject+Helper.h */,
@@ -264,17 +254,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E3DA77F772A4E86D39A58060 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				AD10E982C84FE2708A12D37D /* Pods-Rickface.debug.xcconfig */,
-				12E16383A7229092DCC769E2 /* Pods-Rickface.release.xcconfig */,
-				91D40B16C282265D5EEE7662 /* Pods-RickfaceTests.debug.xcconfig */,
-				6F68EEE592EB2AF53175829F /* Pods-RickfaceTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -282,13 +261,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C05B1C381933B25B001DE063 /* Build configuration list for PBXNativeTarget "Rickface" */;
 			buildPhases = (
-				02B898BF355E56C90087CCEC /* [CP] Check Pods Manifest.lock */,
 				C05B1C021933B25B001DE063 /* Sources */,
 				C05B1C031933B25B001DE063 /* Frameworks */,
 				C05B1C041933B25B001DE063 /* Resources */,
 				C00013F02049F51300990D7B /* Crashlytics */,
-				79D73AFF296A16F24FE7C946 /* [CP] Embed Pods Frameworks */,
-				822AA65FC3A37D7D185917D6 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -303,12 +279,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C05B1C3B1933B25B001DE063 /* Build configuration list for PBXNativeTarget "RickfaceTests" */;
 			buildPhases = (
-				46EE2B3ED7F808485D427B16 /* [CP] Check Pods Manifest.lock */,
 				C05B1C231933B25B001DE063 /* Sources */,
 				C05B1C241933B25B001DE063 /* Frameworks */,
 				C05B1C251933B25B001DE063 /* Resources */,
-				B3A550C4A651FCD1EC56FA0D /* [CP] Embed Pods Frameworks */,
-				74DC5B54C2A2661C5FFB0DE5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -367,6 +340,7 @@
 				C05B1C221933B25B001DE063 /* Images.xcassets in Resources */,
 				C05B1C141933B25B001DE063 /* InfoPlist.strings in Resources */,
 				C05B1C1D1933B25B001DE063 /* Main.storyboard in Resources */,
+				C00E8D7928E4403100CA5AF3 /* Launch Screen.storyboard in Resources */,
 				C0739DFE1940E3CD0064035B /* FontAwesome.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -382,105 +356,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		02B898BF355E56C90087CCEC /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Rickface-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		46EE2B3ED7F808485D427B16 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RickfaceTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		74DC5B54C2A2661C5FFB0DE5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RickfaceTests/Pods-RickfaceTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		79D73AFF296A16F24FE7C946 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rickface/Pods-Rickface-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		822AA65FC3A37D7D185917D6 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Rickface/Pods-Rickface-resources.sh",
-				"${PODS_ROOT}/FBSDKCoreKit/FacebookSDKStrings.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/FacebookSDKStrings.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Rickface/Pods-Rickface-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		B3A550C4A651FCD1EC56FA0D /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RickfaceTests/Pods-RickfaceTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C00013F02049F51300990D7B /* Crashlytics */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -668,10 +543,8 @@
 		};
 		C05B1C391933B25B001DE063 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AD10E982C84FE2708A12D37D /* Pods-Rickface.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -684,6 +557,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Rickface/Rickface-Prefix.pch";
 				INFOPLIST_FILE = "Rickface/Rickface-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Rickface;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -691,6 +566,7 @@
 					"$(PROJECT_DIR)/Rickface",
 					"$(PROJECT_DIR)/Rickface/GAI",
 				);
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.charliewilliams.rickface;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -703,10 +579,8 @@
 		};
 		C05B1C3A1933B25B001DE063 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 12E16383A7229092DCC769E2 /* Pods-Rickface.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -719,6 +593,8 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Rickface/Rickface-Prefix.pch";
 				INFOPLIST_FILE = "Rickface/Rickface-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Rickface;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -726,6 +602,7 @@
 					"$(PROJECT_DIR)/Rickface",
 					"$(PROJECT_DIR)/Rickface/GAI",
 				);
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.charliewilliams.rickface;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -737,7 +614,6 @@
 		};
 		C05B1C3C1933B25B001DE063 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 91D40B16C282265D5EEE7662 /* Pods-RickfaceTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Rickface.app/Rickface";
@@ -757,7 +633,6 @@
 		};
 		C05B1C3D1933B25B001DE063 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6F68EEE592EB2AF53175829F /* Pods-RickfaceTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Rickface.app/Rickface";

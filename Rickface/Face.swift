@@ -8,12 +8,13 @@
 
 import UIKit
 
-class Face: NSObject {
+@objcMembers
+public class Face: NSObject {
 
-    let emotion: String
-    let image: UIImage
+    public let emotion: String
+    public let image: UIImage
 
-    class func random() -> Face! {
+    public class func random() -> Face! {
 
         var face: Face?
 
@@ -23,7 +24,7 @@ class Face: NSObject {
         return face
     }
 
-    init?(index: Int) {
+    public init?(index: Int) {
 
         guard let emotion = emotions[safe: index],
             let image = UIImage(named: String(format: "%03d", index + 1)) else {

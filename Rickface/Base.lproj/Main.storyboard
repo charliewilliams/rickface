@@ -1,56 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="HelveticaNeue.ttc">
-            <string>HelveticaNeue-Bold</string>
-        </array>
-        <array key="HelveticaNeueLights.ttc">
-            <string>HelveticaNeue-Light</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Rickface Main View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="RickfaceMainViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qk6-qu-HPf"/>
+                        <viewControllerLayoutGuide type="bottom" id="XaK-Bg-nsi"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="M3L-oK-C8a" userLabel="Emotion Image View">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M3L-oK-C8a" userLabel="Emotion Image View">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                             </imageView>
-                            <view contentMode="scaleToFill" id="pQO-zk-tc8" userLabel="Black View">
-                                <rect key="frame" x="0.0" y="577" width="375" height="90"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pQO-zk-tc8" userLabel="Black View">
+                                <rect key="frame" x="0.0" y="684" width="390" height="160"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="CW8-Ai-qEU"/>
+                                </constraints>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="aq6-1D-IHP" userLabel="Translucent placeholder">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="31"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rick feels:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JPg-Fm-uaJ">
+                                <rect key="frame" x="120" y="47" width="150" height="26"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="dy5-cP-o8K"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" systemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Rick feels:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JPg-Fm-uaJ">
-                                <rect key="frame" x="0.0" y="31" width="375" height="31"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="1" height="1"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" id="xjJ-Yb-57J">
-                                <rect key="frame" x="20" y="492" width="335" height="155"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjJ-Yb-57J">
+                                <rect key="frame" x="20" y="682.33333333333337" width="350" height="127.66666666666663"/>
                                 <string key="text">Don't know how to feel?
 
 Ask Rick. Rick always knows how to feel. Just ask him and shake your phone.
@@ -61,28 +52,31 @@ Try it now: Think of something, give a shake... and see how Rick feels about it.
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="12"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rickface" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Tc2-FL-VEm">
-                                <rect key="frame" x="20" y="44" width="335" height="97"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rickface" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tc2-FL-VEm">
+                                <rect key="frame" x="70" y="47" width="250" height="66"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="US4-fz-oR3"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="55"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" systemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Quietly Optimistic" textAlignment="center" lineBreakMode="clip" minimumFontSize="18" adjustsLetterSpacingToFitWidth="YES" id="oxG-oK-o5k">
-                                <rect key="frame" x="20" y="543" width="335" height="60"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Quietly Optimistic" textAlignment="center" lineBreakMode="clip" minimumFontSize="18" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oxG-oK-o5k">
+                                <rect key="frame" x="10" y="686" width="370" height="60"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="50"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" id="TVA-X2-LNX" userLabel="Sharing container view">
-                                <rect key="frame" x="0.0" y="603" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TVA-X2-LNX" userLabel="Sharing container view">
+                                <rect key="frame" x="0.0" y="766" width="390" height="44"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ggd-1p-ery" userLabel="fb-share">
-                                        <rect key="frame" x="0.0" y="0.0" width="175" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggd-1p-ery" userLabel="fb-share">
+                                        <rect key="frame" x="0.0" y="0.0" width="182" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="OYN-rv-oCK"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="182" id="X0S-Vh-PZs"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                                         <inset key="contentEdgeInsets" minX="26" minY="0.0" maxX="-5" maxY="0.0"/>
                                         <state key="normal" title="Share your Rickface" backgroundImage="fb_share">
@@ -92,9 +86,8 @@ Try it now: Think of something, give a shake... and see how Rick feels about it.
                                             <action selector="facebookPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="MqO-DV-7Lm"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Obj-33-jqC" userLabel="tw-share">
-                                        <rect key="frame" x="202" y="0.0" width="175" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Obj-33-jqC" userLabel="tw-share">
+                                        <rect key="frame" x="210" y="0.0" width="182" height="44"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="10"/>
                                         <inset key="contentEdgeInsets" minX="32" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <state key="normal" title="Tweet your Rickface" backgroundImage="tw_share">
@@ -106,13 +99,45 @@ Try it now: Think of something, give a shake... and see how Rick feels about it.
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Obj-33-jqC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ggd-1p-ery" secondAttribute="trailing" constant="8" symbolic="YES" id="4Am-8E-BXo"/>
+                                    <constraint firstItem="ggd-1p-ery" firstAttribute="width" secondItem="Obj-33-jqC" secondAttribute="width" id="6na-pe-0Ir"/>
+                                    <constraint firstItem="ggd-1p-ery" firstAttribute="height" secondItem="Obj-33-jqC" secondAttribute="height" id="7aJ-bc-p5I"/>
+                                    <constraint firstAttribute="height" constant="44" id="8UB-g5-Klw"/>
+                                    <constraint firstItem="ggd-1p-ery" firstAttribute="top" secondItem="TVA-X2-LNX" secondAttribute="top" id="Jm4-DD-ac1"/>
+                                    <constraint firstAttribute="trailing" secondItem="Obj-33-jqC" secondAttribute="trailing" constant="-2" id="i0f-LJ-OUH"/>
+                                    <constraint firstItem="ggd-1p-ery" firstAttribute="centerY" secondItem="Obj-33-jqC" secondAttribute="centerY" id="nQY-As-mQl"/>
+                                    <constraint firstItem="ggd-1p-ery" firstAttribute="leading" secondItem="TVA-X2-LNX" secondAttribute="leading" id="uho-Yw-wZP"/>
+                                </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="001.jpg" id="rMw-cM-I11">
-                                <rect key="frame" x="73" y="193" width="230" height="230"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="001.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="rMw-cM-I11">
+                                <rect key="frame" x="80" y="271" width="230" height="230"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="xjJ-Yb-57J" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" constant="-40" id="4HZ-TC-JyS"/>
+                            <constraint firstItem="Tc2-FL-VEm" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="4nl-Wk-jxa"/>
+                            <constraint firstItem="XaK-Bg-nsi" firstAttribute="top" secondItem="xjJ-Yb-57J" secondAttribute="bottom" id="A2e-wJ-qsK"/>
+                            <constraint firstItem="M3L-oK-C8a" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="BYH-qc-Sv1"/>
+                            <constraint firstItem="oxG-oK-o5k" firstAttribute="width" secondItem="kh9-bI-dsS" secondAttribute="width" constant="-20" id="D1s-8f-fza"/>
+                            <constraint firstItem="JPg-Fm-uaJ" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="NzS-2T-V9W"/>
+                            <constraint firstItem="TVA-X2-LNX" firstAttribute="top" secondItem="oxG-oK-o5k" secondAttribute="bottom" constant="20" id="Pg2-BV-6UB"/>
+                            <constraint firstItem="Qk6-qu-HPf" firstAttribute="bottom" secondItem="JPg-Fm-uaJ" secondAttribute="top" id="QMr-pS-n8N"/>
+                            <constraint firstItem="M3L-oK-C8a" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="QWA-ux-Y3w"/>
+                            <constraint firstItem="pQO-zk-tc8" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="QmN-IY-Ol5"/>
+                            <constraint firstItem="Tc2-FL-VEm" firstAttribute="top" secondItem="Qk6-qu-HPf" secondAttribute="bottom" id="aJC-4J-VBl"/>
+                            <constraint firstItem="XaK-Bg-nsi" firstAttribute="top" secondItem="TVA-X2-LNX" secondAttribute="bottom" id="c2p-0H-f5N"/>
+                            <constraint firstItem="xjJ-Yb-57J" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="h6m-Xb-RGg"/>
+                            <constraint firstAttribute="trailing" secondItem="pQO-zk-tc8" secondAttribute="trailing" id="hbE-TZ-but"/>
+                            <constraint firstAttribute="trailing" secondItem="M3L-oK-C8a" secondAttribute="trailing" id="iYs-yY-q6j"/>
+                            <constraint firstAttribute="bottom" secondItem="pQO-zk-tc8" secondAttribute="bottom" id="l96-op-LI2"/>
+                            <constraint firstAttribute="trailing" secondItem="TVA-X2-LNX" secondAttribute="trailing" id="nM5-g9-CVm"/>
+                            <constraint firstItem="TVA-X2-LNX" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="pPJ-C0-DDV"/>
+                            <constraint firstItem="oxG-oK-o5k" firstAttribute="centerX" secondItem="TVA-X2-LNX" secondAttribute="centerX" id="s7k-Ka-wsw"/>
+                            <constraint firstAttribute="bottom" secondItem="M3L-oK-C8a" secondAttribute="bottom" id="xjW-UC-GJw"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="bottomBlackView" destination="pQO-zk-tc8" id="RMB-x1-cBH"/>
@@ -123,27 +148,30 @@ Try it now: Think of something, give a shake... and see how Rick feels about it.
                         <outlet property="rickFaceTitleLabel" destination="Tc2-FL-VEm" id="Veh-S5-T3z"/>
                         <outlet property="rickFeelsLabel" destination="JPg-Fm-uaJ" id="OjI-ZL-piY"/>
                         <outlet property="sharingContainerView" destination="TVA-X2-LNX" id="wdK-OS-wva"/>
-                        <outlet property="translucentPlaceholderLabel" destination="aq6-1D-IHP" id="tbG-IT-PVN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="254.5" y="91.5"/>
+            <point key="canvasLocation" x="391.53846153846155" y="65.047393364928908"/>
         </scene>
         <!--Take Photo View Controller-->
         <scene sceneID="rn6-8T-GN0">
             <objects>
                 <viewController storyboardIdentifier="TakePhotoViewController" id="Zzi-sK-ekE" customClass="TakePhotoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="90V-3O-Ha0"/>
+                        <viewControllerLayoutGuide type="bottom" id="7bC-FM-nl4"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="E6E-69-VSS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" id="YOF-ff-aId">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YOF-ff-aId">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="2WK-Qw-nwF">
-                                        <rect key="frame" x="163" y="587" width="50" height="50"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2WK-Qw-nwF">
+                                        <rect key="frame" x="170" y="764" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                                         <state key="normal" title="Take">
                                             <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -153,8 +181,8 @@ Try it now: Think of something, give a shake... and see how Rick feels about it.
                                             <action selector="takePicture:" destination="Zzi-sK-ekE" eventType="touchUpInside" id="NRv-iy-yAV"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="RDJ-9h-Whk">
-                                        <rect key="frame" x="215" y="20" width="140" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDJ-9h-Whk">
+                                        <rect key="frame" x="230" y="20" width="140" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Post without photo">
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -163,7 +191,7 @@ Try it now: Think of something, give a shake... and see how Rick feels about it.
                                             <action selector="postWithoutPhotoPressed:" destination="Zzi-sK-ekE" eventType="touchUpInside" id="Uz4-Vw-Vcw"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="PBx-Hh-a7k">
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PBx-Hh-a7k">
                                         <rect key="frame" x="20" y="20" width="111" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <state key="normal" title="Back">
@@ -173,8 +201,8 @@ Try it now: Think of something, give a shake... and see how Rick feels about it.
                                             <action selector="cancelPressed:" destination="Zzi-sK-ekE" eventType="touchUpInside" id="BKO-fi-Xmu"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Mw4-DR-K1w" userLabel="Button - Switch">
-                                        <rect key="frame" x="293" y="598" width="79" height="31"/>
+                                    <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mw4-DR-K1w" userLabel="Button - Switch">
+                                        <rect key="frame" x="308" y="775" width="79" height="31"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
                                         <state key="normal" image="switch_camera">
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -183,25 +211,25 @@ Try it now: Think of something, give a shake... and see how Rick feels about it.
                                             <action selector="switchCamera:" destination="Zzi-sK-ekE" eventType="touchUpInside" id="qM1-3z-T3D"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="s2c-UX-CBu" userLabel="Rickface image">
-                                        <rect key="frame" x="272" y="63" width="100" height="146"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s2c-UX-CBu" userLabel="Rickface image">
+                                        <rect key="frame" x="287" y="63" width="100" height="146"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                                     </imageView>
-                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I feel:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6RQ-hQ-7vr">
-                                        <rect key="frame" x="20" y="41" width="335" height="26"/>
+                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="I feel:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6RQ-hQ-7vr">
+                                        <rect key="frame" x="20" y="41" width="350" height="26"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="22"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" systemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" adjustsLetterSpacingToFitWidth="YES" id="ts2-sH-pg5">
-                                        <rect key="frame" x="0.0" y="540" width="375" height="50"/>
+                                    <label hidden="YES" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ts2-sH-pg5">
+                                        <rect key="frame" x="0.0" y="717" width="390" height="50"/>
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="50"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
-                                        <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="shadowColor" systemColor="darkTextColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -221,13 +249,16 @@ Try it now: Think of something, give a shake... and see how Rick feels about it.
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ys-y1-7bD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="719" y="92"/>
+            <point key="canvasLocation" x="1106.1538461538462" y="65.402843601895725"/>
         </scene>
     </scenes>
     <resources>
         <image name="001.jpg" width="640" height="853"/>
-        <image name="fb_share" width="42" height="42"/>
-        <image name="switch_camera" width="50" height="31"/>
+        <image name="fb_share" width="42.5" height="42.5"/>
+        <image name="switch_camera" width="50" height="31.5"/>
         <image name="tw_share" width="44" height="44"/>
+        <systemColor name="darkTextColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
