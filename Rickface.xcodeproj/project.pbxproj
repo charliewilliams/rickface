@@ -3,268 +3,149 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C00013F32049F6D600990D7B /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C00013F12049F6D600990D7B /* Fabric.framework */; };
-		C00013F42049F6D600990D7B /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C00013F22049F6D600990D7B /* Crashlytics.framework */; };
-		C00E8D7928E4403100CA5AF3 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C00E8D7828E4403100CA5AF3 /* Launch Screen.storyboard */; };
-		C056E72F197677CF0083BB9E /* SHTwitterRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C056E72C197677CF0083BB9E /* SHTwitterRequest.m */; };
-		C056E730197677CF0083BB9E /* SHTwitterRequestFollow.m in Sources */ = {isa = PBXBuildFile; fileRef = C056E72E197677CF0083BB9E /* SHTwitterRequestFollow.m */; };
-		C056E7531976E6DB0083BB9E /* libGoogleAnalyticsServices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C056E7521976E6DB0083BB9E /* libGoogleAnalyticsServices.a */; };
-		C056E7551976E9EF0083BB9E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C056E7541976E9EF0083BB9E /* CoreData.framework */; };
-		C056E7571976E9F90083BB9E /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C056E7561976E9F90083BB9E /* libz.dylib */; };
-		C05B1C0A1933B25B001DE063 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05B1C091933B25B001DE063 /* Foundation.framework */; };
-		C05B1C0C1933B25B001DE063 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05B1C0B1933B25B001DE063 /* CoreGraphics.framework */; };
-		C05B1C0E1933B25B001DE063 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05B1C0D1933B25B001DE063 /* UIKit.framework */; };
-		C05B1C141933B25B001DE063 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C05B1C121933B25B001DE063 /* InfoPlist.strings */; };
-		C05B1C161933B25B001DE063 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C05B1C151933B25B001DE063 /* main.m */; };
-		C05B1C1A1933B25B001DE063 /* CWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C05B1C191933B25B001DE063 /* CWAppDelegate.m */; };
-		C05B1C1D1933B25B001DE063 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C05B1C1B1933B25B001DE063 /* Main.storyboard */; };
-		C05B1C201933B25B001DE063 /* RickfaceMainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C05B1C1F1933B25B001DE063 /* RickfaceMainViewController.m */; };
-		C05B1C221933B25B001DE063 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C05B1C211933B25B001DE063 /* Images.xcassets */; };
-		C05B1C291933B25B001DE063 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05B1C281933B25B001DE063 /* XCTest.framework */; };
-		C05B1C2A1933B25B001DE063 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05B1C091933B25B001DE063 /* Foundation.framework */; };
-		C05B1C2B1933B25B001DE063 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05B1C0D1933B25B001DE063 /* UIKit.framework */; };
-		C05B1C331933B25B001DE063 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C05B1C311933B25B001DE063 /* InfoPlist.strings */; };
-		C05B1C351933B25B001DE063 /* RickfaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C05B1C341933B25B001DE063 /* RickfaceTests.m */; };
-		C05B1C421933B458001DE063 /* NSObject+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = C05B1C411933B458001DE063 /* NSObject+Helper.m */; };
-		C05B1C4B1933B515001DE063 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05B1C4A1933B515001DE063 /* SystemConfiguration.framework */; };
-		C05B1C4C1933B522001DE063 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C05B1C441933B4DD001DE063 /* MobileCoreServices.framework */; };
-		C0739DF61940D8D30064035B /* TakePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C0739DF51940D8D30064035B /* TakePhotoViewController.m */; };
-		C0739DFC1940DDB20064035B /* TakePhotoViewController+SocialShare.m in Sources */ = {isa = PBXBuildFile; fileRef = C0739DFB1940DDB20064035B /* TakePhotoViewController+SocialShare.m */; };
-		C0739DFE1940E3CD0064035B /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = C0739DFD1940E3CD0064035B /* FontAwesome.otf */; };
-		C09601DB1A1CCFEA00C6101D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C09601DA1A1CCFEA00C6101D /* libsqlite3.dylib */; };
-		C0F0C9B5204B0D6200635898 /* Face.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F0C9B4204B0D6200635898 /* Face.swift */; };
-		C0F0C9B7204B0EDC00635898 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F0C9B6204B0EDC00635898 /* Array.swift */; };
-		C0F0C9B9204B0EE200635898 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F0C9B8204B0EE200635898 /* Collection.swift */; };
+		C0182A1128F609BA00D4A13F /* Device.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0182A1028F609BA00D4A13F /* Device.swift */; };
+		C0182A1328F611B700D4A13F /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0182A1228F611B700D4A13F /* Launch Screen.storyboard */; };
+		C06F768028E982C300E673BE /* RickfaceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06F767F28E982C300E673BE /* RickfaceApp.swift */; };
+		C06F768228E982C300E673BE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06F768128E982C300E673BE /* ContentView.swift */; };
+		C06F768428E982C400E673BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C06F768328E982C400E673BE /* Assets.xcassets */; };
+		C06F768728E982C400E673BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C06F768628E982C400E673BE /* Preview Assets.xcassets */; };
+		C06F769128E982C500E673BE /* RickfaceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06F769028E982C500E673BE /* RickfaceTests.swift */; };
+		C06F769B28E982C500E673BE /* RickfaceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06F769A28E982C500E673BE /* RickfaceUITests.swift */; };
+		C06F769D28E982C500E673BE /* RickfaceUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06F769C28E982C500E673BE /* RickfaceUITestsLaunchTests.swift */; };
+		C06F76AA28E9839800E673BE /* Face.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06F76A928E9839800E673BE /* Face.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		C05B1C2C1933B25B001DE063 /* PBXContainerItemProxy */ = {
+		C06F768D28E982C500E673BE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = C05B1BFE1933B25B001DE063 /* Project object */;
+			containerPortal = C06F767428E982C300E673BE /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = C05B1C051933B25B001DE063;
+			remoteGlobalIDString = C06F767B28E982C300E673BE;
+			remoteInfo = Rickface;
+		};
+		C06F769728E982C500E673BE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C06F767428E982C300E673BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C06F767B28E982C300E673BE;
 			remoteInfo = Rickface;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C00013F12049F6D600990D7B /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
-		C00013F22049F6D600990D7B /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
-		C00E8D7828E4403100CA5AF3 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		C056E72B197677CF0083BB9E /* SHTwitterRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHTwitterRequest.h; sourceTree = "<group>"; };
-		C056E72C197677CF0083BB9E /* SHTwitterRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTwitterRequest.m; sourceTree = "<group>"; };
-		C056E72D197677CF0083BB9E /* SHTwitterRequestFollow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SHTwitterRequestFollow.h; sourceTree = "<group>"; };
-		C056E72E197677CF0083BB9E /* SHTwitterRequestFollow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SHTwitterRequestFollow.m; sourceTree = "<group>"; };
-		C056E7481976E6DB0083BB9E /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
-		C056E7491976E6DB0083BB9E /* GAIDictionaryBuilder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIDictionaryBuilder.h; sourceTree = "<group>"; };
-		C056E74A1976E6DB0083BB9E /* GAIEcommerceFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceFields.h; sourceTree = "<group>"; };
-		C056E74B1976E6DB0083BB9E /* GAIEcommerceProduct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProduct.h; sourceTree = "<group>"; };
-		C056E74C1976E6DB0083BB9E /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProductAction.h; sourceTree = "<group>"; };
-		C056E74D1976E6DB0083BB9E /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIEcommercePromotion.h; sourceTree = "<group>"; };
-		C056E74E1976E6DB0083BB9E /* GAIFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAIFields.h; sourceTree = "<group>"; };
-		C056E74F1976E6DB0083BB9E /* GAILogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAILogger.h; sourceTree = "<group>"; };
-		C056E7501976E6DB0083BB9E /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
-		C056E7511976E6DB0083BB9E /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
-		C056E7521976E6DB0083BB9E /* libGoogleAnalyticsServices.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalyticsServices.a; sourceTree = "<group>"; };
-		C056E7541976E9EF0083BB9E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		C056E7561976E9F90083BB9E /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		C05B1C061933B25B001DE063 /* Rickface.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rickface.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C05B1C091933B25B001DE063 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		C05B1C0B1933B25B001DE063 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		C05B1C0D1933B25B001DE063 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		C05B1C111933B25B001DE063 /* Rickface-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Rickface-Info.plist"; sourceTree = "<group>"; };
-		C05B1C131933B25B001DE063 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C05B1C151933B25B001DE063 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C05B1C171933B25B001DE063 /* Rickface-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rickface-Prefix.pch"; sourceTree = "<group>"; };
-		C05B1C181933B25B001DE063 /* CWAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CWAppDelegate.h; sourceTree = "<group>"; };
-		C05B1C191933B25B001DE063 /* CWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CWAppDelegate.m; sourceTree = "<group>"; };
-		C05B1C1C1933B25B001DE063 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C05B1C1E1933B25B001DE063 /* RickfaceMainViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RickfaceMainViewController.h; sourceTree = "<group>"; };
-		C05B1C1F1933B25B001DE063 /* RickfaceMainViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RickfaceMainViewController.m; sourceTree = "<group>"; };
-		C05B1C211933B25B001DE063 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		C05B1C271933B25B001DE063 /* RickfaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickfaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C05B1C281933B25B001DE063 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		C05B1C301933B25B001DE063 /* RickfaceTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RickfaceTests-Info.plist"; sourceTree = "<group>"; };
-		C05B1C321933B25B001DE063 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		C05B1C341933B25B001DE063 /* RickfaceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RickfaceTests.m; sourceTree = "<group>"; };
-		C05B1C401933B458001DE063 /* NSObject+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Helper.h"; sourceTree = "<group>"; };
-		C05B1C411933B458001DE063 /* NSObject+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Helper.m"; sourceTree = "<group>"; };
-		C05B1C441933B4DD001DE063 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
-		C05B1C4A1933B515001DE063 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		C0739DF41940D8D30064035B /* TakePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TakePhotoViewController.h; sourceTree = "<group>"; };
-		C0739DF51940D8D30064035B /* TakePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TakePhotoViewController.m; sourceTree = "<group>"; };
-		C0739DFA1940DDB20064035B /* TakePhotoViewController+SocialShare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TakePhotoViewController+SocialShare.h"; sourceTree = "<group>"; };
-		C0739DFB1940DDB20064035B /* TakePhotoViewController+SocialShare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TakePhotoViewController+SocialShare.m"; sourceTree = "<group>"; };
-		C0739DFD1940E3CD0064035B /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome.otf; sourceTree = "<group>"; };
-		C09601DA1A1CCFEA00C6101D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
-		C0F0C9B3204B0D6200635898 /* Rickface-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Rickface-Bridging-Header.h"; sourceTree = "<group>"; };
-		C0F0C9B4204B0D6200635898 /* Face.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Face.swift; sourceTree = "<group>"; };
-		C0F0C9B6204B0EDC00635898 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
-		C0F0C9B8204B0EE200635898 /* Collection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		C0182A1028F609BA00D4A13F /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
+		C0182A1228F611B700D4A13F /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		C06F767C28E982C300E673BE /* Rickface.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Rickface.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C06F767F28E982C300E673BE /* RickfaceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickfaceApp.swift; sourceTree = "<group>"; };
+		C06F768128E982C300E673BE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C06F768328E982C400E673BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C06F768628E982C400E673BE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C06F768C28E982C500E673BE /* RickfaceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickfaceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C06F769028E982C500E673BE /* RickfaceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickfaceTests.swift; sourceTree = "<group>"; };
+		C06F769628E982C500E673BE /* RickfaceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RickfaceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C06F769A28E982C500E673BE /* RickfaceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickfaceUITests.swift; sourceTree = "<group>"; };
+		C06F769C28E982C500E673BE /* RickfaceUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickfaceUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C06F76A928E9839800E673BE /* Face.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Face.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		C05B1C031933B25B001DE063 /* Frameworks */ = {
+		C06F767928E982C300E673BE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C09601DB1A1CCFEA00C6101D /* libsqlite3.dylib in Frameworks */,
-				C056E7571976E9F90083BB9E /* libz.dylib in Frameworks */,
-				C056E7551976E9EF0083BB9E /* CoreData.framework in Frameworks */,
-				C05B1C4C1933B522001DE063 /* MobileCoreServices.framework in Frameworks */,
-				C056E7531976E6DB0083BB9E /* libGoogleAnalyticsServices.a in Frameworks */,
-				C05B1C4B1933B515001DE063 /* SystemConfiguration.framework in Frameworks */,
-				C05B1C0C1933B25B001DE063 /* CoreGraphics.framework in Frameworks */,
-				C05B1C0E1933B25B001DE063 /* UIKit.framework in Frameworks */,
-				C05B1C0A1933B25B001DE063 /* Foundation.framework in Frameworks */,
-				C00013F42049F6D600990D7B /* Crashlytics.framework in Frameworks */,
-				C00013F32049F6D600990D7B /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C05B1C241933B25B001DE063 /* Frameworks */ = {
+		C06F768928E982C500E673BE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C05B1C291933B25B001DE063 /* XCTest.framework in Frameworks */,
-				C05B1C2B1933B25B001DE063 /* UIKit.framework in Frameworks */,
-				C05B1C2A1933B25B001DE063 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C06F769328E982C500E673BE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C056E7471976E6DB0083BB9E /* GAI */ = {
+		C06F767328E982C300E673BE = {
 			isa = PBXGroup;
 			children = (
-				C056E7481976E6DB0083BB9E /* GAI.h */,
-				C056E7491976E6DB0083BB9E /* GAIDictionaryBuilder.h */,
-				C056E74A1976E6DB0083BB9E /* GAIEcommerceFields.h */,
-				C056E74B1976E6DB0083BB9E /* GAIEcommerceProduct.h */,
-				C056E74C1976E6DB0083BB9E /* GAIEcommerceProductAction.h */,
-				C056E74D1976E6DB0083BB9E /* GAIEcommercePromotion.h */,
-				C056E74E1976E6DB0083BB9E /* GAIFields.h */,
-				C056E74F1976E6DB0083BB9E /* GAILogger.h */,
-				C056E7501976E6DB0083BB9E /* GAITrackedViewController.h */,
-				C056E7511976E6DB0083BB9E /* GAITracker.h */,
-				C056E7521976E6DB0083BB9E /* libGoogleAnalyticsServices.a */,
-			);
-			path = GAI;
-			sourceTree = "<group>";
-		};
-		C05B1BFD1933B25B001DE063 = {
-			isa = PBXGroup;
-			children = (
-				C05B1C0F1933B25B001DE063 /* Rickface */,
-				C05B1C2E1933B25B001DE063 /* RickfaceTests */,
-				C05B1C081933B25B001DE063 /* Frameworks */,
-				C05B1C071933B25B001DE063 /* Products */,
+				C0182A1228F611B700D4A13F /* Launch Screen.storyboard */,
+				C06F767E28E982C300E673BE /* Rickface */,
+				C06F768F28E982C500E673BE /* RickfaceTests */,
+				C06F769928E982C500E673BE /* RickfaceUITests */,
+				C06F767D28E982C300E673BE /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		C05B1C071933B25B001DE063 /* Products */ = {
+		C06F767D28E982C300E673BE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C05B1C061933B25B001DE063 /* Rickface.app */,
-				C05B1C271933B25B001DE063 /* RickfaceTests.xctest */,
+				C06F767C28E982C300E673BE /* Rickface.app */,
+				C06F768C28E982C500E673BE /* RickfaceTests.xctest */,
+				C06F769628E982C500E673BE /* RickfaceUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C05B1C081933B25B001DE063 /* Frameworks */ = {
+		C06F767E28E982C300E673BE /* Rickface */ = {
 			isa = PBXGroup;
 			children = (
-				C09601DA1A1CCFEA00C6101D /* libsqlite3.dylib */,
-				C056E7561976E9F90083BB9E /* libz.dylib */,
-				C00013F22049F6D600990D7B /* Crashlytics.framework */,
-				C00013F12049F6D600990D7B /* Fabric.framework */,
-				C056E7541976E9EF0083BB9E /* CoreData.framework */,
-				C05B1C4A1933B515001DE063 /* SystemConfiguration.framework */,
-				C05B1C441933B4DD001DE063 /* MobileCoreServices.framework */,
-				C05B1C091933B25B001DE063 /* Foundation.framework */,
-				C05B1C0B1933B25B001DE063 /* CoreGraphics.framework */,
-				C05B1C0D1933B25B001DE063 /* UIKit.framework */,
-				C05B1C281933B25B001DE063 /* XCTest.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		C05B1C0F1933B25B001DE063 /* Rickface */ = {
-			isa = PBXGroup;
-			children = (
-				C05B1C181933B25B001DE063 /* CWAppDelegate.h */,
-				C05B1C191933B25B001DE063 /* CWAppDelegate.m */,
-				C0F0C9B4204B0D6200635898 /* Face.swift */,
-				C05B1C1B1933B25B001DE063 /* Main.storyboard */,
-				C00E8D7828E4403100CA5AF3 /* Launch Screen.storyboard */,
-				C05B1C1E1933B25B001DE063 /* RickfaceMainViewController.h */,
-				C05B1C1F1933B25B001DE063 /* RickfaceMainViewController.m */,
-				C05B1C401933B458001DE063 /* NSObject+Helper.h */,
-				C05B1C411933B458001DE063 /* NSObject+Helper.m */,
-				C0739DF41940D8D30064035B /* TakePhotoViewController.h */,
-				C0739DF51940D8D30064035B /* TakePhotoViewController.m */,
-				C0739DFA1940DDB20064035B /* TakePhotoViewController+SocialShare.h */,
-				C0739DFB1940DDB20064035B /* TakePhotoViewController+SocialShare.m */,
-				C056E72B197677CF0083BB9E /* SHTwitterRequest.h */,
-				C056E72C197677CF0083BB9E /* SHTwitterRequest.m */,
-				C056E72D197677CF0083BB9E /* SHTwitterRequestFollow.h */,
-				C056E72E197677CF0083BB9E /* SHTwitterRequestFollow.m */,
-				C0F0C9B6204B0EDC00635898 /* Array.swift */,
-				C0F0C9B8204B0EE200635898 /* Collection.swift */,
-				C05B1C211933B25B001DE063 /* Images.xcassets */,
-				C05B1C101933B25B001DE063 /* Supporting Files */,
-				C0F0C9B3204B0D6200635898 /* Rickface-Bridging-Header.h */,
+				C06F767F28E982C300E673BE /* RickfaceApp.swift */,
+				C06F768128E982C300E673BE /* ContentView.swift */,
+				C06F76A928E9839800E673BE /* Face.swift */,
+				C0182A1028F609BA00D4A13F /* Device.swift */,
+				C06F768328E982C400E673BE /* Assets.xcassets */,
+				C06F768528E982C400E673BE /* Preview Content */,
 			);
 			path = Rickface;
 			sourceTree = "<group>";
 		};
-		C05B1C101933B25B001DE063 /* Supporting Files */ = {
+		C06F768528E982C400E673BE /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				C056E7471976E6DB0083BB9E /* GAI */,
-				C0739DFD1940E3CD0064035B /* FontAwesome.otf */,
-				C05B1C111933B25B001DE063 /* Rickface-Info.plist */,
-				C05B1C121933B25B001DE063 /* InfoPlist.strings */,
-				C05B1C151933B25B001DE063 /* main.m */,
-				C05B1C171933B25B001DE063 /* Rickface-Prefix.pch */,
+				C06F768628E982C400E673BE /* Preview Assets.xcassets */,
 			);
-			name = "Supporting Files";
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		C05B1C2E1933B25B001DE063 /* RickfaceTests */ = {
+		C06F768F28E982C500E673BE /* RickfaceTests */ = {
 			isa = PBXGroup;
 			children = (
-				C05B1C341933B25B001DE063 /* RickfaceTests.m */,
-				C05B1C2F1933B25B001DE063 /* Supporting Files */,
+				C06F769028E982C500E673BE /* RickfaceTests.swift */,
 			);
 			path = RickfaceTests;
 			sourceTree = "<group>";
 		};
-		C05B1C2F1933B25B001DE063 /* Supporting Files */ = {
+		C06F769928E982C500E673BE /* RickfaceUITests */ = {
 			isa = PBXGroup;
 			children = (
-				C05B1C301933B25B001DE063 /* RickfaceTests-Info.plist */,
-				C05B1C311933B25B001DE063 /* InfoPlist.strings */,
+				C06F769A28E982C500E673BE /* RickfaceUITests.swift */,
+				C06F769C28E982C500E673BE /* RickfaceUITestsLaunchTests.swift */,
 			);
-			name = "Supporting Files";
+			path = RickfaceUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C05B1C051933B25B001DE063 /* Rickface */ = {
+		C06F767B28E982C300E673BE /* Rickface */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C05B1C381933B25B001DE063 /* Build configuration list for PBXNativeTarget "Rickface" */;
+			buildConfigurationList = C06F76A028E982C500E673BE /* Build configuration list for PBXNativeTarget "Rickface" */;
 			buildPhases = (
-				C05B1C021933B25B001DE063 /* Sources */,
-				C05B1C031933B25B001DE063 /* Frameworks */,
-				C05B1C041933B25B001DE063 /* Resources */,
-				C00013F02049F51300990D7B /* Crashlytics */,
+				C06F767828E982C300E673BE /* Sources */,
+				C06F767928E982C300E673BE /* Frameworks */,
+				C06F767A28E982C300E673BE /* Resources */,
 			);
 			buildRules = (
 			);
@@ -272,186 +153,177 @@
 			);
 			name = Rickface;
 			productName = Rickface;
-			productReference = C05B1C061933B25B001DE063 /* Rickface.app */;
+			productReference = C06F767C28E982C300E673BE /* Rickface.app */;
 			productType = "com.apple.product-type.application";
 		};
-		C05B1C261933B25B001DE063 /* RickfaceTests */ = {
+		C06F768B28E982C500E673BE /* RickfaceTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C05B1C3B1933B25B001DE063 /* Build configuration list for PBXNativeTarget "RickfaceTests" */;
+			buildConfigurationList = C06F76A328E982C500E673BE /* Build configuration list for PBXNativeTarget "RickfaceTests" */;
 			buildPhases = (
-				C05B1C231933B25B001DE063 /* Sources */,
-				C05B1C241933B25B001DE063 /* Frameworks */,
-				C05B1C251933B25B001DE063 /* Resources */,
+				C06F768828E982C500E673BE /* Sources */,
+				C06F768928E982C500E673BE /* Frameworks */,
+				C06F768A28E982C500E673BE /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C05B1C2D1933B25B001DE063 /* PBXTargetDependency */,
+				C06F768E28E982C500E673BE /* PBXTargetDependency */,
 			);
 			name = RickfaceTests;
 			productName = RickfaceTests;
-			productReference = C05B1C271933B25B001DE063 /* RickfaceTests.xctest */;
+			productReference = C06F768C28E982C500E673BE /* RickfaceTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C06F769528E982C500E673BE /* RickfaceUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C06F76A628E982C500E673BE /* Build configuration list for PBXNativeTarget "RickfaceUITests" */;
+			buildPhases = (
+				C06F769228E982C500E673BE /* Sources */,
+				C06F769328E982C500E673BE /* Frameworks */,
+				C06F769428E982C500E673BE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C06F769828E982C500E673BE /* PBXTargetDependency */,
+			);
+			name = RickfaceUITests;
+			productName = RickfaceUITests;
+			productReference = C06F769628E982C500E673BE /* RickfaceUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		C05B1BFE1933B25B001DE063 /* Project object */ = {
+		C06F767428E982C300E673BE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = CW;
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1400;
-				ORGANIZATIONNAME = "Charlie Williams";
 				TargetAttributes = {
-					C05B1C051933B25B001DE063 = {
-						DevelopmentTeam = N2WM6EN8GQ;
-						LastSwiftMigration = 0920;
-						ProvisioningStyle = Automatic;
+					C06F767B28E982C300E673BE = {
+						CreatedOnToolsVersion = 14.0.1;
 					};
-					C05B1C261933B25B001DE063 = {
-						TestTargetID = C05B1C051933B25B001DE063;
+					C06F768B28E982C500E673BE = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = C06F767B28E982C300E673BE;
+					};
+					C06F769528E982C500E673BE = {
+						CreatedOnToolsVersion = 14.0.1;
+						TestTargetID = C06F767B28E982C300E673BE;
 					};
 				};
 			};
-			buildConfigurationList = C05B1C011933B25B001DE063 /* Build configuration list for PBXProject "Rickface" */;
-			compatibilityVersion = "Xcode 3.2";
+			buildConfigurationList = C06F767728E982C300E673BE /* Build configuration list for PBXProject "Rickface" */;
+			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
-			mainGroup = C05B1BFD1933B25B001DE063;
-			productRefGroup = C05B1C071933B25B001DE063 /* Products */;
+			mainGroup = C06F767328E982C300E673BE;
+			productRefGroup = C06F767D28E982C300E673BE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C05B1C051933B25B001DE063 /* Rickface */,
-				C05B1C261933B25B001DE063 /* RickfaceTests */,
+				C06F767B28E982C300E673BE /* Rickface */,
+				C06F768B28E982C500E673BE /* RickfaceTests */,
+				C06F769528E982C500E673BE /* RickfaceUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		C05B1C041933B25B001DE063 /* Resources */ = {
+		C06F767A28E982C300E673BE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C05B1C221933B25B001DE063 /* Images.xcassets in Resources */,
-				C05B1C141933B25B001DE063 /* InfoPlist.strings in Resources */,
-				C05B1C1D1933B25B001DE063 /* Main.storyboard in Resources */,
-				C00E8D7928E4403100CA5AF3 /* Launch Screen.storyboard in Resources */,
-				C0739DFE1940E3CD0064035B /* FontAwesome.otf in Resources */,
+				C0182A1328F611B700D4A13F /* Launch Screen.storyboard in Resources */,
+				C06F768728E982C400E673BE /* Preview Assets.xcassets in Resources */,
+				C06F768428E982C400E673BE /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C05B1C251933B25B001DE063 /* Resources */ = {
+		C06F768A28E982C500E673BE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C05B1C331933B25B001DE063 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C06F769428E982C500E673BE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		C00013F02049F51300990D7B /* Crashlytics */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = Crashlytics;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "./Fabric.framework/run 3bf576a7e0e1a634037b4c20ef79f63196a6eb0f cdb8002da5b7da3cfd6f90faa82a27e0d488250d853761f7c834a9200ca71c52";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		C05B1C021933B25B001DE063 /* Sources */ = {
+		C06F767828E982C300E673BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C056E72F197677CF0083BB9E /* SHTwitterRequest.m in Sources */,
-				C0F0C9B7204B0EDC00635898 /* Array.swift in Sources */,
-				C0739DF61940D8D30064035B /* TakePhotoViewController.m in Sources */,
-				C0739DFC1940DDB20064035B /* TakePhotoViewController+SocialShare.m in Sources */,
-				C05B1C1A1933B25B001DE063 /* CWAppDelegate.m in Sources */,
-				C0F0C9B5204B0D6200635898 /* Face.swift in Sources */,
-				C05B1C161933B25B001DE063 /* main.m in Sources */,
-				C0F0C9B9204B0EE200635898 /* Collection.swift in Sources */,
-				C056E730197677CF0083BB9E /* SHTwitterRequestFollow.m in Sources */,
-				C05B1C201933B25B001DE063 /* RickfaceMainViewController.m in Sources */,
-				C05B1C421933B458001DE063 /* NSObject+Helper.m in Sources */,
+				C06F768228E982C300E673BE /* ContentView.swift in Sources */,
+				C06F76AA28E9839800E673BE /* Face.swift in Sources */,
+				C06F768028E982C300E673BE /* RickfaceApp.swift in Sources */,
+				C0182A1128F609BA00D4A13F /* Device.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C05B1C231933B25B001DE063 /* Sources */ = {
+		C06F768828E982C500E673BE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C05B1C351933B25B001DE063 /* RickfaceTests.m in Sources */,
+				C06F769128E982C500E673BE /* RickfaceTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C06F769228E982C500E673BE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C06F769D28E982C500E673BE /* RickfaceUITestsLaunchTests.swift in Sources */,
+				C06F769B28E982C500E673BE /* RickfaceUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		C05B1C2D1933B25B001DE063 /* PBXTargetDependency */ = {
+		C06F768E28E982C500E673BE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = C05B1C051933B25B001DE063 /* Rickface */;
-			targetProxy = C05B1C2C1933B25B001DE063 /* PBXContainerItemProxy */;
+			target = C06F767B28E982C300E673BE /* Rickface */;
+			targetProxy = C06F768D28E982C500E673BE /* PBXContainerItemProxy */;
+		};
+		C06F769828E982C500E673BE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C06F767B28E982C300E673BE /* Rickface */;
+			targetProxy = C06F769728E982C500E673BE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		C05B1C121933B25B001DE063 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C05B1C131933B25B001DE063 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		C05B1C1B1933B25B001DE063 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C05B1C1C1933B25B001DE063 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C05B1C311933B25B001DE063 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C05B1C321933B25B001DE063 /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		C05B1C361933B25B001DE063 /* Debug */ = {
+		C06F769E28E982C500E673BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
@@ -464,14 +336,14 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Charlie Williams (8HTL4QAGGJ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Charlie Williams (8HTL4QAGGJ)";
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -479,34 +351,40 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
-		C05B1C371933B25B001DE063 /* Release */ = {
+		C06F769F28E982C500E673BE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
@@ -519,14 +397,14 @@
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Charlie Williams (N2WM6EN8GQ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Charlie Williams (N2WM6EN8GQ)";
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -534,149 +412,205 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		C05B1C391933B25B001DE063 /* Debug */ = {
+		C06F76A128E982C500E673BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Rickface/Rickface-Prefix.pch";
-				INFOPLIST_FILE = "Rickface/Rickface-Info.plist";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Rickface/Preview Content\"";
+				DEVELOPMENT_TEAM = N2WM6EN8GQ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Rickface;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Rickface",
-					"$(PROJECT_DIR)/Rickface/GAI",
+					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.charliewilliams.rickface;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Rickface/Rickface-Bridging-Header.h";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				WRAPPER_EXTENSION = app;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
-		C05B1C3A1933B25B001DE063 /* Release */ = {
+		C06F76A228E982C500E673BE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
-				ENABLE_BITCODE = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Rickface/Rickface-Prefix.pch";
-				INFOPLIST_FILE = "Rickface/Rickface-Info.plist";
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Rickface/Preview Content\"";
+				DEVELOPMENT_TEAM = N2WM6EN8GQ;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = Rickface;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Rickface",
-					"$(PROJECT_DIR)/Rickface/GAI",
+					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.4;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.charliewilliams.rickface;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Rickface/Rickface-Bridging-Header.h";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				WRAPPER_EXTENSION = app;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
-		C05B1C3C1933B25B001DE063 /* Debug */ = {
+		C06F76A428E982C500E673BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Rickface.app/Rickface";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Rickface/Rickface-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "RickfaceTests/RickfaceTests-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.charliewilliams.${PRODUCT_NAME:rfc1034identifier}";
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N2WM6EN8GQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.charliewilliams.RickfaceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rickface.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Rickface";
 			};
 			name = Debug;
 		};
-		C05B1C3D1933B25B001DE063 /* Release */ = {
+		C06F76A528E982C500E673BE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Rickface.app/Rickface";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Rickface/Rickface-Prefix.pch";
-				INFOPLIST_FILE = "RickfaceTests/RickfaceTests-Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.charliewilliams.${PRODUCT_NAME:rfc1034identifier}";
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N2WM6EN8GQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.charliewilliams.RickfaceTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Rickface.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Rickface";
+			};
+			name = Release;
+		};
+		C06F76A728E982C500E673BE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N2WM6EN8GQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.charliewilliams.RickfaceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Rickface;
+			};
+			name = Debug;
+		};
+		C06F76A828E982C500E673BE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N2WM6EN8GQ;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.charliewilliams.RickfaceUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Rickface;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C05B1C011933B25B001DE063 /* Build configuration list for PBXProject "Rickface" */ = {
+		C06F767728E982C300E673BE /* Build configuration list for PBXProject "Rickface" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C05B1C361933B25B001DE063 /* Debug */,
-				C05B1C371933B25B001DE063 /* Release */,
+				C06F769E28E982C500E673BE /* Debug */,
+				C06F769F28E982C500E673BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C05B1C381933B25B001DE063 /* Build configuration list for PBXNativeTarget "Rickface" */ = {
+		C06F76A028E982C500E673BE /* Build configuration list for PBXNativeTarget "Rickface" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C05B1C391933B25B001DE063 /* Debug */,
-				C05B1C3A1933B25B001DE063 /* Release */,
+				C06F76A128E982C500E673BE /* Debug */,
+				C06F76A228E982C500E673BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C05B1C3B1933B25B001DE063 /* Build configuration list for PBXNativeTarget "RickfaceTests" */ = {
+		C06F76A328E982C500E673BE /* Build configuration list for PBXNativeTarget "RickfaceTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C05B1C3C1933B25B001DE063 /* Debug */,
-				C05B1C3D1933B25B001DE063 /* Release */,
+				C06F76A428E982C500E673BE /* Debug */,
+				C06F76A528E982C500E673BE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C06F76A628E982C500E673BE /* Build configuration list for PBXNativeTarget "RickfaceUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C06F76A728E982C500E673BE /* Debug */,
+				C06F76A828E982C500E673BE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = C05B1BFE1933B25B001DE063 /* Project object */;
+	rootObject = C06F767428E982C300E673BE /* Project object */;
 }
