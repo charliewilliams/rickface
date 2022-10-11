@@ -11,7 +11,7 @@ import SwiftUI
 struct RickfaceApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(face: Face.random())
         }
     }
 }

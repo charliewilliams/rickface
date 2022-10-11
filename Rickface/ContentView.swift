@@ -8,19 +8,41 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var face: Face
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        
+        ZStack(alignment: .bottom) {
+            Image(uiImage: face.image)
+                .resizable()
+                .aspectRatio(contentMode: .fill)
+                .edgesIgnoringSafeArea(.all)
+            
+            Rectangle()
+                .fill(Gradient(colors: [.clear, .clear, .clear, .clear, .black]))
+                .edgesIgnoringSafeArea(.all)
+
+            VStack(alignment: .leading) {
+                
+                Text("Rick feels")
+                    .font(.callout)
+                    .foregroundColor(.white)
+                
+                Text(face.emotion)
+                    .font(.largeTitle)
+                    .bold()
+                    .foregroundColor(.white)
+            }
         }
-        .padding()
+        .onShake {
+            face = Face.random()
+        }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(face: Face(index: 0)!)
     }
 }
