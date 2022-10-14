@@ -1,14 +1,13 @@
 //
 //  ContentView.swift
-//  Rickface
+//  RickWatch Watch App
 //
-//  Created by Charlie Williams on 02/10/2022.
+//  Created by Charlie Williams on 13/10/2022.
 //
 
 import SwiftUI
 
-struct ContentView: View {
-    
+struct WatchView: View {
     @State var face: Face
     
     var body: some View {
@@ -22,7 +21,7 @@ struct ContentView: View {
             Rectangle()
                 .fill(Gradient(colors: [.clear, .clear, .clear, .clear, .black]))
                 .edgesIgnoringSafeArea(.all)
-
+            
             VStack(alignment: .leading) {
                 
                 Text("Rick feels")
@@ -35,14 +34,14 @@ struct ContentView: View {
                     .foregroundColor(.white)
             }
         }
-        .onShake {
+        .onTapGesture {
             face = Face.random()
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct WatchView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(face: Face(index: 0)!)
+        WatchView(face: Face.random())
     }
 }

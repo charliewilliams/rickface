@@ -11,7 +11,7 @@ import SwiftUI
 struct RickWatch_Watch_AppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            WatchView(face: Face.random())
         }
     }
 }
