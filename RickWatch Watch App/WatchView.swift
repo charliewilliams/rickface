@@ -12,22 +12,25 @@ struct WatchView: View {
     
     var body: some View {
         
+//        Rectangle()
+//            .foregroundColor(.red)
+        
         ZStack(alignment: .bottom) {
             Image(uiImage: face.image)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
-            
+
             Rectangle()
                 .fill(Gradient(colors: [.clear, .clear, .clear, .clear, .black]))
                 .edgesIgnoringSafeArea(.all)
-            
+
             VStack(alignment: .leading) {
-                
+
                 Text("Rick feels")
                     .font(.callout)
                     .foregroundColor(.white)
-                
+
                 Text(face.emotion)
                     .font(.largeTitle)
                     .bold()
@@ -40,8 +43,8 @@ struct WatchView: View {
     }
 }
 
-struct WatchView_Previews: PreviewProvider {
-    static var previews: some View {
-        WatchView(face: Face.random())
-    }
-}
+//struct WatchView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        WatchView(face: Face.random())
+//    }
+//}

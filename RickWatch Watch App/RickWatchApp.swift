@@ -12,6 +12,7 @@ struct RickWatch_Watch_AppApp: App {
     var body: some Scene {
         WindowGroup {
             WatchView(face: Face.random())
+//            WatchView()
         }
     }
 }
