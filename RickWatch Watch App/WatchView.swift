@@ -12,9 +12,6 @@ struct WatchView: View {
     
     var body: some View {
         
-//        Rectangle()
-//            .foregroundColor(.red)
-        
         ZStack(alignment: .bottom) {
             Image(uiImage: face.image)
                 .resizable()
@@ -22,7 +19,7 @@ struct WatchView: View {
                 .edgesIgnoringSafeArea(.all)
 
             Rectangle()
-                .fill(Gradient(colors: [.clear, .clear, .clear, .clear, .black]))
+                .fill(Gradient(colors: [.clear, .clear, .black]))
                 .edgesIgnoringSafeArea(.all)
 
             VStack(alignment: .leading) {
@@ -32,10 +29,14 @@ struct WatchView: View {
                     .foregroundColor(.white)
 
                 Text(face.emotion)
-                    .font(.largeTitle)
+                    .font(.title)
                     .bold()
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.25)
                     .foregroundColor(.white)
+                    .padding(EdgeInsets(top: -10, leading: 0, bottom: 0, trailing: 0))
             }
+            .padding(EdgeInsets(top: 0, leading: 10, bottom: 15, trailing: 10))
         }
         .onTapGesture {
             face = Face.random()
@@ -43,8 +44,8 @@ struct WatchView: View {
     }
 }
 
-//struct WatchView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        WatchView(face: Face.random())
-//    }
-//}
+struct WatchView_Previews: PreviewProvider {
+    static var previews: some View {
+        WatchView(face: Face.random())
+    }
+}
