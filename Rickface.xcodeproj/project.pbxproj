@@ -19,7 +19,32 @@
 		C06F768728E982C400E673BE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C06F768628E982C400E673BE /* Preview Assets.xcassets */; };
 		C06F76AA28E9839800E673BE /* Face.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06F76A928E9839800E673BE /* Face.swift */; };
 		C0811F1E28F845500026EB30 /* Face.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06F76A928E9839800E673BE /* Face.swift */; };
+		C0E05A202900024A008412AB /* RickWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C0182A1828F840F300D4A13F /* RickWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C0E05A212900024A008412AB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C06F767428E982C300E673BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C0182A1728F840F300D4A13F;
+			remoteInfo = "RickWatch Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C0E05A232900024A008412AB /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				C0E05A202900024A008412AB /* RickWatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C0182A1028F609BA00D4A13F /* Device.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Device.swift; sourceTree = "<group>"; };
@@ -35,6 +60,7 @@
 		C06F768328E982C400E673BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C06F768628E982C400E673BE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C06F76A928E9839800E673BE /* Face.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Face.swift; sourceTree = "<group>"; };
+		C0E05A242900082C008412AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +107,7 @@
 				C06F767E28E982C300E673BE /* Rickface */,
 				C0182A1928F840F300D4A13F /* RickWatch Watch App */,
 				C06F767D28E982C300E673BE /* Products */,
+				C0E05A1F2900024A008412AB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +123,7 @@
 		C06F767E28E982C300E673BE /* Rickface */ = {
 			isa = PBXGroup;
 			children = (
+				C0E05A242900082C008412AB /* Info.plist */,
 				C06F767F28E982C300E673BE /* RickfaceApp.swift */,
 				C06F768128E982C300E673BE /* MainView.swift */,
 				C06F76A928E9839800E673BE /* Face.swift */,
@@ -112,6 +140,13 @@
 				C06F768628E982C400E673BE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C0E05A1F2900024A008412AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,10 +176,12 @@
 				C06F767828E982C300E673BE /* Sources */,
 				C06F767928E982C300E673BE /* Frameworks */,
 				C06F767A28E982C300E673BE /* Resources */,
+				C0E05A232900024A008412AB /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				C0E05A222900024A008412AB /* PBXTargetDependency */,
 			);
 			name = Rickface;
 			productName = Rickface;
@@ -234,6 +271,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		C0E05A222900024A008412AB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C0182A1728F840F300D4A13F /* RickWatch Watch App */;
+			targetProxy = C0E05A212900024A008412AB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		C0182A2328F840F500D4A13F /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -249,14 +294,14 @@
 				INFOPLIST_KEY_CFBundleDisplayName = RickWatch;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.charliewilliams.rickface;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
-				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
+				MARKETING_VERSION = 2.1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.charliewilliams.rickface.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -281,14 +326,14 @@
 				INFOPLIST_KEY_CFBundleDisplayName = RickWatch;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.charliewilliams.rickface;
 				INFOPLIST_KEY_WKRunsIndependentlyOfCompanionApp = YES;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
-				PRODUCT_BUNDLE_IDENTIFIER = .watchkitapp;
+				MARKETING_VERSION = 2.1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.charliewilliams.rickface.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -426,20 +471,23 @@
 				DEVELOPMENT_TEAM = N2WM6EN8GQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Rickface/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Rickface;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.charliewilliams.rickface.watchkitapp;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.charliewilliams.rickface;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -462,20 +510,23 @@
 				DEVELOPMENT_TEAM = N2WM6EN8GQ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Rickface/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = Rickface;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen";
 				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.charliewilliams.rickface.watchkitapp;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.1;
+				MARKETING_VERSION = 2.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.charliewilliams.rickface;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
